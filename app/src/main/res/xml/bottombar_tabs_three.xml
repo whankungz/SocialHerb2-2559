@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+
+    <tab
+        icon="@drawable/ic_herb2"
+        id="@+id/tab_herb"
+        title="สมุนไพร"
+        />
+
+    <tab
+        icon="@drawable/ic_disease"
+        id="@+id/tab_disease"
+        title="อาการ/โรค"
+        />
+
+    <tab
+        icon="@drawable/ic_article"
+        id="@+id/tab_aritcle"
+        title="บทความ"
+        />
+
+    <tab
+        icon="@drawable/ic_fav"
+        id="@+id/tab_favorite"
+        title="รายการโปรด"
+        />
+
+</tabs>
+
