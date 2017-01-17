@@ -34,11 +34,13 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColorHint="#979797" />
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="1.1dp"
         android:layout_marginTop="10dp"
         android:background="#e6e3e3" />
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
@@ -47,6 +49,7 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColorHint="#979797" />
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="1.1dp"
