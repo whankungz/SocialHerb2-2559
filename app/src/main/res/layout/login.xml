@@ -18,50 +18,51 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="136dp"
+            android:layout_marginLeft="135dp"
             android:text="Login"
             android:textColor="#ffffff"
-            android:textSize="30dp" />
-
+            android:textSize="36dp" />
     </RelativeLayout>
+
+
 
     <EditText
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:hint="ีusername"
-        android:inputType="textPassword"
+        android:hint="@string/username_title"
         android:padding="10dp"
-        android:textColorHint="#979797" />
+        android:textColor="#797979"
+        android:textColorHint="#c1c1c1"
+        android:textSize="22dp" />
 
     <View
         android:layout_width="wrap_content"
-        android:layout_height="1.1dp"
-        android:layout_marginTop="10dp"
-        android:background="#e6e3e3" />
+        android:layout_height="0.9dp"
+        android:background="#d7d7d7" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ีpassword"
+        android:hint="@string/password_title"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textColorHint="#979797" />
+        android:textColor="#797979"
+        android:textColorHint="#c1c1c1"
+        android:textSize="22dp" />
 
     <View
         android:layout_width="wrap_content"
-        android:layout_height="1.1dp"
-        android:layout_marginTop="10dp"
-        android:background="#e6e3e3" />
+        android:layout_height="0.9dp"
+        android:background="#d7d7d7" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/login_bg"
         android:onClick="ClickStart"
         android:paddingLeft="100dp"
@@ -89,14 +90,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/bg_shape_popup"
+        android:layout_marginTop="214dp"
         android:onClick="ClickStart"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:text="หน้าหลัก"
-        android:textColor="#bfbfbf"
-        android:textSize="20dp" />
+        android:text="หน้าแรก"
+        android:textColor="#b1b1b1"
+        android:textSize="24dp" />
 
 
 </LinearLayout>

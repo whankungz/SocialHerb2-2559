@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SocialHerb</string>
+    <string name="login_title">Devahoy</string>
+    <string name="username_title">หมายเลขสมาชิกเภสัชกร</string>
+    <string name="password_title">รหัสผ่าน</string>
+    <string name="button_login">Login</string>
+    <string name="register">New User? Register here</string>
+    <string name="login_error_message">Username or Password is incorrect.</string>
+
+
 </resources>

@@ -55,7 +55,6 @@ public class Login extends AppCompatActivity {
 
 //        เปลี่ยนfont
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
-
         skip.setTypeface(font);
         head.setTypeface(font);
         user.setTypeface(font);
@@ -63,7 +62,7 @@ public class Login extends AppCompatActivity {
         login.setTypeface(font);
         regis.setTypeface(font);
 
-
+//หน้าแรก
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,13 +70,28 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Menu.class);
                 startActivity(intent);
 //                getActivity().finish();
+            }
+        });
+//เข้าสู่ระบบ
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(getApplicationContext(), Menu.class);
+                startActivity(intent);
+
+            }
+        });
+//ลงทะเบียน
+        regis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), Menu.class);
+                startActivity(intent);
 
             }
         });
 
     }
-
-
-
 }
