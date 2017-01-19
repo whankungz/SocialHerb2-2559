@@ -25,5 +25,6 @@ public class MainHerb extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
+
     }
 }

@@ -26,10 +26,7 @@
             android:scaleType="center"
             app:srcCompat="@drawable/ic_app"
             android:layout_marginTop="110dp"
-
-
             />
-
 
         <TextView
             android:layout_marginTop="86dp"
@@ -41,9 +38,8 @@
             android:layout_centerHorizontal="true"
             android:text="next >>"
             android:textColor="#c4c4c4"
-
-
             />
+
 
 
     </RelativeLayout>

@@ -25,5 +25,6 @@ public class MainDisease extends android.support.v4.app.Fragment{
     }
 
     private void setView() {
+
     }
 }

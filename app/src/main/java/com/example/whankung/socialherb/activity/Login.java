@@ -3,33 +3,18 @@ package com.example.whankung.socialherb.activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
-import com.example.whankung.socialherb.fragment.Article.MainAritcle;
-import com.example.whankung.socialherb.fragment.Disease.MainDisease;
-import com.example.whankung.socialherb.fragment.Favorite.MainFavorite;
-import com.example.whankung.socialherb.fragment.Herb.MainHerb;
-import com.example.whankung.socialherb.view.Singleton;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnTabSelectListener;
 
 /**
  * Created by Whankung on 17/1/2560.
  */
 
 public class Login extends AppCompatActivity {
-
-
 
     private Typeface font;
 
@@ -45,6 +30,18 @@ public class Login extends AppCompatActivity {
 
 
     private void setView() {
+
+        ImageView img = (ImageView) findViewById(R.id.action_login);
+        img.setVisibility(View.VISIBLE);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //กลับไปยังหน้าเลือกเภสัช
+                Intent intent = new Intent(getApplicationContext(), Menu.class);
+                startActivity(intent);
+
+            }
+        });
 
         TextView skip = (TextView) findViewById(R.id.skip);
         TextView head = (TextView) findViewById(R.id.textView4);
@@ -76,7 +73,6 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(getApplicationContext(), Menu.class);
                 startActivity(intent);
 
@@ -86,8 +82,7 @@ public class Login extends AppCompatActivity {
         regis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(getApplicationContext(), Menu.class);
+                Intent intent = new Intent(getApplicationContext(), Register.class);
                 startActivity(intent);
 
             }
