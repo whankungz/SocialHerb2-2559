@@ -6,29 +6,38 @@
         android:id="@+id/menu_1"
         android:orderInCategory="1"
         android:title="ล็อกอิน"
-        app:showAsAction="ifRoom|withText"/>
-    <!--<item-->
-        <!--android:id="@+id/menu_2"-->
-        <!--android:orderInCategory="2"-->
-        <!--android:title="สมุนไพร"-->
-        <!--app:showAsAction="never" />-->
-    <!--<item-->
-        <!--android:id="@+id/menu_3"-->
-        <!--android:orderInCategory="3"-->
-        <!--android:title="อาการ/โรค"-->
-        <!--app:showAsAction="never" />-->
-    <!--<item-->
-        <!--android:id="@+id/menu_4"-->
-        <!--android:orderInCategory="4"-->
-        <!--android:title="บทความ"-->
-        <!--app:showAsAction="never" />-->
+        app:showAsAction="never"/>
+    <item
+        android:icon="@drawable/ic_herb2"
+        android:id="@+id/menu_2"
+        android:orderInCategory="2"
+        android:title="สมุนไพร"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/ic_disease"
+        android:id="@+id/menu_3"
+        android:orderInCategory="3"
+        android:title="อาการ/โรค"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/ic_article"
+        android:id="@+id/menu_4"
+        android:orderInCategory="4"
+        android:title="บทความ"
+        app:showAsAction="never" />
 
 
-    <!--<item-->
-        <!--android:id="@+id/menu_5"-->
-        <!--android:orderInCategory="5"-->
-        <!--android:title="รายการโปรด"-->
-        <!--app:showAsAction="never" />-->
+    <item
+        android:icon="@drawable/ic_fav"
+        android:id="@+id/menu_5"
+        android:orderInCategory="5"
+        android:title="รายการโปรด"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_6"
+        android:orderInCategory="5"
+        android:title="Infoghaphic"
+        app:showAsAction="never" />
 
 
 </menu>

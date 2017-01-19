@@ -20,6 +20,9 @@
         <activity android:name=".activity.Register"></activity>
 
 
+
+
+
         <!--<activity android:name=".activity.Menu" >-->
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->

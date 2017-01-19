@@ -22,6 +22,7 @@ import com.example.whankung.socialherb.fragment.Article.MainArticle;
 import com.example.whankung.socialherb.fragment.Disease.MainDisease;
 import com.example.whankung.socialherb.fragment.Favorite.MainFavorite;
 import com.example.whankung.socialherb.fragment.Herb.MainHerb;
+import com.example.whankung.socialherb.fragment.Info.MainInfo;
 import com.example.whankung.socialherb.view.Singleton;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -41,6 +42,7 @@ public class Menu extends AppCompatActivity {
     private TextView tv;
 
     private Drawer result = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,10 +93,11 @@ public class Menu extends AppCompatActivity {
 //                        }
                         FragmentManager manager = getSupportFragmentManager();
                         FragmentTransaction transaction = manager.beginTransaction();
-                        switch(position) {
+                        switch (position) {
                             case 0:
                                 Intent intent = new Intent(getApplicationContext(), Login.class);
-                            startActivity(intent);
+                                startActivity(intent);
+
 //                                setContentView(R.layout.login);
                                 break;
                             case 1:
@@ -117,6 +120,11 @@ public class Menu extends AppCompatActivity {
                             case 4:
                                 tv.setText("รายการโปรด");
                                 transaction.replace(R.id.frgMain, new MainFavorite());
+                                transaction.commit();
+                                break;
+                            case 5:
+                                tv.setText("Infoghaphic");
+                                transaction.replace(R.id.frgMain, new MainInfo());
                                 transaction.commit();
                                 break;
 
@@ -193,7 +201,7 @@ public class Menu extends AppCompatActivity {
                     tv.setText("สมุนไพร");
                     tv.setTextColor(Color.parseColor("#ffffff"));
                     tv.setTypeface(font);
-                 //   img.setVisibility(View.INVISIBLE);
+                    //   img.setVisibility(View.INVISIBLE);
 
                 } else if (tabId == R.id.tab_disease) {
                     FragmentManager manager = getSupportFragmentManager();
@@ -202,7 +210,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("อาการ/โรค");
 //                    tv.setTextColor(Color.parseColor("#B22222"));
-                   // img.setVisibility(View.INVISIBLE);
+                    // img.setVisibility(View.INVISIBLE);
                 } else if (tabId == R.id.tab_aritcle) {
                     FragmentManager manager = getSupportFragmentManager();
                     FragmentTransaction transaction = manager.beginTransaction();
@@ -210,7 +218,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("บทความ");
 //                    tv.setTextColor(Color.parseColor("#20B2AA"));
-                  //  img.setVisibility(View.INVISIBLE);
+                    //  img.setVisibility(View.INVISIBLE);
                 } else if (tabId == R.id.tab_favorite) {
                     FragmentManager manager = getSupportFragmentManager();
                     FragmentTransaction transaction = manager.beginTransaction();
@@ -218,7 +226,7 @@ public class Menu extends AppCompatActivity {
                     transaction.commit();
                     tv.setText("รายการโปรด");
 //                    tv.setTextColor(Color.parseColor("#20B2AA"));
-                   // img.setVisibility(View.INVISIBLE);
+                    // img.setVisibility(View.INVISIBLE);
                 }
             }
 

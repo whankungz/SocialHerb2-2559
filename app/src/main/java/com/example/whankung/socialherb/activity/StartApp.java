@@ -1,9 +1,13 @@
 package com.example.whankung.socialherb.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +16,12 @@ import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
 import com.example.whankung.socialherb.activity.Menu;
+import com.example.whankung.socialherb.fragment.Article.MainArticle;
+import com.example.whankung.socialherb.fragment.Disease.MainDisease;
+import com.example.whankung.socialherb.fragment.Favorite.MainFavorite;
+import com.example.whankung.socialherb.fragment.Herb.MainHerb;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 /**
  * Created by Whankung on 16/1/2560.
@@ -25,7 +35,7 @@ public class StartApp extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_start, container, false);
         setView();
-
+//        setBottomBar();
         return rootView;
     }
 
@@ -68,7 +78,7 @@ public class StartApp extends Fragment {
         });
 
 
-        tv2.setOnClickListener(new View.OnClickListener(){
+        tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -77,10 +87,60 @@ public class StartApp extends Fragment {
                 getActivity().finish();
 
 
-
             }
         });
-        }
+    }
 
+//    private void setBottomBar() {
+//        final BottomBar bottomBar = (BottomBar) rootView.findViewById(R.id.bottomBar);
+//        final TextView tv = (TextView) rootView.findViewById(R.id.toolbar_title);
+//
+//        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+//
+////            ImageView img = (ImageView) findViewById(R.id.action);
+//
+//            @Override
+//            public void onTabSelected(@IdRes int tabId) {
+//
+//                if (tabId == R.id.tab_herb) {
+//
+//                    // Toast.makeText(MainActivity.this,"tttt",Toast.LENGTH_LONG).show();
+//                    Intent intent = new Intent(getActivity(), MainHerb.class);
+//                    startActivity(intent);
+//                    getActivity().finish();
+//                    tv.setText("สมุนไพร");
+//                    tv.setTextColor(Color.parseColor("#ffffff"));
+//                    tv.setTypeface(font);
+//                    //   img.setVisibility(View.INVISIBLE);
+//
+//                } else if (tabId == R.id.tab_disease) {
+//                    Intent intent2 = new Intent(getActivity(), MainDisease.class);
+//                    startActivity(intent2);
+//                    getActivity().finish();
+//                    tv.setText("อาการ/โรค");
+////                    tv.setTextColor(Color.parseColor("#B22222"));
+//                    // img.setVisibility(View.INVISIBLE);
+//                } else if (tabId == R.id.tab_aritcle) {
+//                    Intent intent3 = new Intent(getActivity(), MainArticle.class);
+//                    startActivity(intent3);
+//                    getActivity().finish();
+//                    tv.setText("บทความ");
+////                    tv.setTextColor(Color.parseColor("#20B2AA"));
+//                    //  img.setVisibility(View.INVISIBLE);
+//                } else if (tabId == R.id.tab_favorite) {
+//                    Intent intent4 = new Intent(getActivity(), MainFavorite.class);
+//                    startActivity(intent4);
+//                    getActivity().finish();
+//                    tv.setText("รายการโปรด");
+////                    tv.setTextColor(Color.parseColor("#20B2AA"));
+//                    // img.setVisibility(View.INVISIBLE);
+//                }
+//            }
+//
+//
+//        });
+//
+//    }
+//
 
 }

@@ -65,9 +65,21 @@
         android:text="ผู้ใช้ทั่วไป"
         android:textColor="#a9a9a9"
         android:textSize="30dp"
-
-
         />
+
+    <!--<com.roughike.bottombar.BottomBar-->
+    <!--android:background="#ffffff"-->
+    <!--android:id="@+id/bottomBar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--app:bb_activeTabColor="#249e24"-->
+    <!--app:bb_behavior="shifting"-->
+    <!--app:bb_inActiveTabColor="#8b8b8b"-->
+    <!--app:bb_tabXmlResource="@xml/bottombar_tabs_three"-->
+    <!--/>-->
+
 
 
 </LinearLayout>

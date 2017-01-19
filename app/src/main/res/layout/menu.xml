@@ -43,9 +43,6 @@
         app:bb_behavior="shifting"
         app:bb_inActiveTabColor="#8b8b8b"
         app:bb_tabXmlResource="@xml/bottombar_tabs_three"
-
-
-
       />
 
 
