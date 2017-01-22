@@ -40,7 +40,7 @@
         android:onClick="ClickStart"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:text="จิตอาสา (เภสัชกร)"
+        android:text="จิิตอาสา (เภสัชกร)"
         android:textColor="#a9a9a9"
         android:textSize="30dp"
         />

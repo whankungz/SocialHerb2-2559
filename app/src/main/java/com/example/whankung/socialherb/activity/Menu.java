@@ -9,12 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.*;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.whankung.socialherb.R;
 
@@ -22,16 +20,12 @@ import com.example.whankung.socialherb.fragment.Article.MainArticle;
 import com.example.whankung.socialherb.fragment.Disease.MainDisease;
 import com.example.whankung.socialherb.fragment.Favorite.MainFavorite;
 import com.example.whankung.socialherb.fragment.Herb.MainHerb;
-import com.example.whankung.socialherb.fragment.Info.MainInfo;
 import com.example.whankung.socialherb.view.Singleton;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
-
-import static com.example.whankung.socialherb.R.id.menu_1;
 
 /**
  * Created by Whankung on 16/1/2560.
@@ -101,32 +95,37 @@ public class Menu extends AppCompatActivity {
 //                                setContentView(R.layout.login);
                                 break;
                             case 1:
-                                tv.setText("สมุนไพร");
-                                tv.setTextColor(Color.parseColor("#ffffff"));
-                                tv.setTypeface(font);
-                                transaction.replace(R.id.frgMain, new MainHerb());
-                                transaction.commit();
+//                                setContentView(R.layout.activity_start2);
+                                intent = new Intent(getApplicationContext(), StartApp2.class);
+                                startActivity(intent);
                                 break;
                             case 2:
-                                tv.setText("อาการ/โรค");
-                                transaction.replace(R.id.frgMain, new MainDisease());
-                                transaction.commit();
-                                break;
-                            case 3:
-                                tv.setText("บทความ");
-                                transaction.replace(R.id.frgMain, new MainArticle());
-                                transaction.commit();
-                                break;
-                            case 4:
-                                tv.setText("รายการโปรด");
-                                transaction.replace(R.id.frgMain, new MainFavorite());
-                                transaction.commit();
-                                break;
-                            case 5:
                                 tv.setText("Infoghaphic");
-                                transaction.replace(R.id.frgMain, new MainInfo());
-                                transaction.commit();
+                                intent = new Intent(getApplicationContext(), MainInfo.class);
+                                startActivity(intent);
+
                                 break;
+
+//                            case 2:
+//                                tv.setText("อาการ/โรค");
+//                                transaction.replace(R.id.frgMain, new MainDisease());
+//                                transaction.commit();
+//                                break;
+//                            case 3:
+//                                tv.setText("บทความ");
+//                                transaction.replace(R.id.frgMain, new MainArticle());
+//                                transaction.commit();
+//                                break;
+//                            case 4:
+//                                tv.setText("รายการโปรด");
+//                                transaction.replace(R.id.frgMain, new MainFavorite());
+//                                transaction.commit();
+//                                break;
+//                            case 5:
+//                                tv.setText("Infoghaphic");
+//                                transaction.replace(R.id.frgMain, new MainInfo());
+//                                transaction.commit();
+//                                break;
 
                         }
 //                        if (drawerItem instanceof Nameable) {

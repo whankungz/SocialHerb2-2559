@@ -19,10 +19,90 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="การลงทะเบียนสมาชิกเภสัชกร"
+            android:text="การลงทะเบียนสมาชิก"
             android:textColor="#ffffff"
             android:textSize="24dp" />
     </RelativeLayout>
+
+     <EditText
+    android:id="@+id/username"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:hint="หมายเลขสมาชิก"
+    android:padding="10dp"
+    android:textColor="#797979"
+    android:textColorHint="#c1c1c1"
+    android:textSize="22dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#d7d7d7" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:hint="@string/password_title"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="#797979"
+        android:textColorHint="#c1c1c1"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#d7d7d7" />
+
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:hint="อีเมล   example@email.com"
+        android:padding="10dp"
+        android:textColor="#797979"
+        android:textColorHint="#c1c1c1"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#d7d7d7" />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="เพศ"
+        android:padding="10dp"
+        android:textColor="#797979"
+        android:textColorHint="#c1c1c1"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#d7d7d7" />
+
+    <TextView
+        android:id="@+id/regis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/login_bg"
+        android:onClick="ClickStart"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:text="ลงทะเบียน"
+        android:textColor="#ffffff"
+        android:textSize="22dp" />
+
 
 
 

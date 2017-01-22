@@ -21,16 +21,14 @@ public class Toolbar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.custom_toolbar);
+        setContentView(R.layout.custom_toolbar_login);
         setView();
 
 
     }
 
     private void setView() {
-        TextView login = (TextView) findViewById(R.id.login);
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
-        login.setTypeface(font);
 
 
     }

@@ -18,7 +18,8 @@
         <activity android:name=".activity.Menu"></activity>
         <activity android:name=".activity.Login"></activity>
         <activity android:name=".activity.Register"></activity>
-
+        <activity android:name=".activity.StartApp2"></activity>
+        <activity android:name=".activity.MainInfo"></activity>
 
 
 

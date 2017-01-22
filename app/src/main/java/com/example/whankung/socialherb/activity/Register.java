@@ -28,10 +28,31 @@ public class Register extends AppCompatActivity {
     }
 
     private void setView() {
-        TextView regis = (TextView) findViewById(R.id.textView);
+        TextView regis2 = (TextView) findViewById(R.id.regis);
+        TextView regis_bar = (TextView) findViewById(R.id.textView);
+        TextView user2 = (TextView) findViewById(R.id.username);
+        TextView pass = (TextView) findViewById(R.id.pass);
+        TextView mail = (TextView) findViewById(R.id.mail);
+        TextView sex = (TextView) findViewById(R.id.sex);
+
 
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
-        regis.setTypeface(font);
+        regis2.setTypeface(font);
+        regis_bar.setTypeface(font);
+        user2.setTypeface(font);
+        pass.setTypeface(font);
+        mail.setTypeface(font);
+        sex.setTypeface(font);
+
+        regis2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), Menu.class);
+                startActivity(intent);
+//                getActivity().finish();
+            }
+        });
 
 
         ImageView img = (ImageView) findViewById(R.id.action);
