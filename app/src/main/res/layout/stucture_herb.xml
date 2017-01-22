@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
@@ -13,6 +15,15 @@
         android:background="@drawable/bg_shape_popup"
         android:hint="ค้นหา"
         android:textColor="#979797"
-        android:id="@+id/multiAutoCompleteTextView" />
+        android:id="@+id/search"
+        android:singleLine="true" />
+    <FrameLayout
+        android:id="@+id/frgMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:background="#ffffff"/>
+
+
 
 </LinearLayout>
