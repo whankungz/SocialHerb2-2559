@@ -1,14 +1,20 @@
 package com.example.whankung.socialherb.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.whankung.socialherb.R;
+
+import info.hoang8f.android.segmented.SegmentedGroup;
 
 /**
  * Created by Whankung on 18/1/2560.
@@ -16,6 +22,7 @@ import com.example.whankung.socialherb.R;
 
 public class Register extends AppCompatActivity {
     private Typeface font;
+    private Button button;
 
 
     @Override
@@ -66,7 +73,16 @@ public class Register extends AppCompatActivity {
 
             }
         });
-    }
 
+        SegmentedGroup segmented2 = (SegmentedGroup)findViewById(R.id.segmented2);
+        segmented2.setTintColor(Color.DKGRAY);
+
+//        SegmentedGroup segmented3 = (SegmentedGroup)findViewById(R.id.segmented3);
+//        segmented3.setTintColor(Color.parseColor("#FFD0FF3C"), Color.parseColor("#FF7B07B2"));
+//
+//        SegmentedGroup segmented4 = (SegmentedGroup)findViewById(R.id.segmented4);
+//        segmented4.setTintColor(getResources().getColor(R.color.radio_button_selected_color));
+
+    }
 
 }
