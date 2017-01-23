@@ -1,6 +1,7 @@
 package com.example.whankung.socialherb.fragment.Herb;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -29,6 +30,7 @@ import java.util.List;
 public class MainHerb extends android.support.v4.app.Fragment {
     private View rootView;
     private TabLayout tabLayout;
+    private Typeface font;
 
     @Nullable
     @Override
@@ -41,7 +43,7 @@ public class MainHerb extends android.support.v4.app.Fragment {
 
 
     private void setView() {
-
+        font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         EditText search = (EditText)rootView.findViewById(R.id.search);
        search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

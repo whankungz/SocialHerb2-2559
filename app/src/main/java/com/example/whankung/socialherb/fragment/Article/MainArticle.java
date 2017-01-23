@@ -29,5 +29,6 @@ public class MainArticle extends android.support.v4.app.Fragment{
 
     private void setView() {
 
+
     }
 }
