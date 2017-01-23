@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,11 +78,11 @@ public class Register extends AppCompatActivity {
         SegmentedGroup segmented2 = (SegmentedGroup)findViewById(R.id.segmented2);
         segmented2.setTintColor(Color.DKGRAY);
 
-//        SegmentedGroup segmented3 = (SegmentedGroup)findViewById(R.id.segmented3);
-//        segmented3.setTintColor(Color.parseColor("#FFD0FF3C"), Color.parseColor("#FF7B07B2"));
-//
-//        SegmentedGroup segmented4 = (SegmentedGroup)findViewById(R.id.segmented4);
-//        segmented4.setTintColor(getResources().getColor(R.color.radio_button_selected_color));
+        RadioButton man =(RadioButton)findViewById(R.id.man);
+        RadioButton wman =(RadioButton)findViewById(R.id.woman);
+
+        man.setTypeface(font);
+        wman.setTypeface(font);
 
     }
 
