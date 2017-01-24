@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+
+    <TextView
+        android:id="@+id/research"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ClickStart"
+        android:paddingLeft="14dp"
+        android:text="งานวิจัยที่เกี่ยวข้อง"
+        android:textColor="#a3a2a2"
+        android:textSize="22dp" />
+
+
+    <TextView
+        android:id="@+id/fromre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ClickStart"
+        android:paddingLeft="14dp"
+        android:text="ที่มา"
+        android:textColor="#a3a2a2"
+        android:textSize="22dp" />
 </LinearLayout>

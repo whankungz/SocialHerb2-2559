@@ -17,6 +17,7 @@ import com.example.whankung.socialherb.R;
 public class Login extends AppCompatActivity {
 
     private Typeface font;
+    
 
 
     @Override
@@ -76,6 +77,8 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Menu.class);
                 startActivity(intent);
 
+
+
             }
         });
 //ลงทะเบียน
@@ -89,4 +92,7 @@ public class Login extends AppCompatActivity {
         });
 
     }
+
+
+
 }

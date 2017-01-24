@@ -36,6 +36,12 @@ public class GeneralHerbFragment extends android.support.v4.app.Fragment {
         TextView t4 = (TextView) rootView.findViewById(R.id.tree4);
         TextView t5 = (TextView) rootView.findViewById(R.id.tree5);
         TextView t6 = (TextView) rootView.findViewById(R.id.tree6);
+        TextView data = (TextView) rootView.findViewById(R.id.tree_t);
+        TextView data2 = (TextView) rootView.findViewById(R.id.tree_t2);
+        TextView data3 = (TextView) rootView.findViewById(R.id.tree_t3);
+        TextView data4 = (TextView) rootView.findViewById(R.id.tree_t4);
+        TextView data5 = (TextView) rootView.findViewById(R.id.tree_t5);
+        TextView data6 = (TextView) rootView.findViewById(R.id.tree_t6);
 
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         herb.setTypeface(font);
@@ -47,6 +53,12 @@ public class GeneralHerbFragment extends android.support.v4.app.Fragment {
         t4.setTypeface(font);
         t5.setTypeface(font);
         t6.setTypeface(font);
+        data.setTypeface(font);
+        data2.setTypeface(font);
+        data3.setTypeface(font);
+        data4.setTypeface(font);
+        data5.setTypeface(font);
+        data6.setTypeface(font);
     }
 
 }
