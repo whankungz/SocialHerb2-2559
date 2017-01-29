@@ -97,8 +97,6 @@ public class Menu extends AppCompatActivity {
         ProfileDrawerItem profileMain = new ProfileDrawerItem();
 
 
-
-
         AccountHeader accountHeader = new AccountHeaderBuilder()
                 .withActivity(this)
                 .addProfiles(
@@ -106,12 +104,13 @@ public class Menu extends AppCompatActivity {
                 )
 
 
-                .withTextColor(getResources().getColor(R.color.colorAccent))
+        .withTextColor(getResources().getColor(R.color.md_dark_appbar))
+
                 .withNameTypeface(Typeface.createFromAsset(getAssets(), "tmedium.ttf"))
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile iProfile, boolean b) {
-                        if (b== true) {
+                        if (b == true) {
                             Intent intent = new Intent(getApplicationContext(), Login.class);
                             startActivity(intent);
                         } else {
@@ -140,88 +139,82 @@ public class Menu extends AppCompatActivity {
         accountHeader.equals(Html.fromHtml("Email: <b>" + email + "</b>"));
 
 
-
         final Drawer drawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withActionBarDrawerToggle(true)
                 .withAccountHeader(accountHeader)
                 .withCloseOnClick(true)
-
                 .addDrawerItems(
-
-
                         new PrimaryDrawerItem()
                                 .withIcon(FontAwesome.Icon.faw_home)
-                                .withName("Home")
-                                .withIconColor(getResources().getColor(R.color.colorAccent))
+                                .withName(String.valueOf(Html.fromHtml("หน้าแรก")))
+                                .withIconColor(getResources().getColor(R.color.md_dark_appbar))
                                 .withIdentifier(0)
                                 .withSelectable(false),
+
                         new PrimaryDrawerItem()
-                                .withIcon(FontAwesome.Icon.faw_cogs)
-                                .withName("Settings")
-                                .withSelectable(false)
-                                .withIconColor(getResources().getColor(R.color.colorAccent))
-                                .withIdentifier(1),
-                        new DividerDrawerItem(),
-                        new PrimaryDrawerItem()
-                                .withIcon(FontAwesome.Icon.faw_bullhorn)
-                                .withName("Tell a Friend")
-                                .withIconColor(getResources().getColor(R.color.colorAccent))
-                                .withIdentifier(2)
+                                .withIcon(FontAwesome.Icon.faw_list_alt)
+                                .withName("Infographic")
+                                .withIconColor(getResources().getColor(R.color.md_dark_appbar))
+                                .withIdentifier(0)
                                 .withSelectable(false),
+
+                        new DividerDrawerItem(),
+
                         new PrimaryDrawerItem()
-                                .withIcon(FontAwesome.Icon.faw_user)
-                                .withName("About")
+                                .withIcon(FontAwesome.Icon.faw_share)
+                                .withName("Invite")
                                 .withSelectable(false)
-                                .withIconColor(getResources().getColor(R.color.colorAccent))
+                                .withIconColor(getResources().getColor(R.color.md_dark_appbar))
                                 .withIdentifier(3),
                         new PrimaryDrawerItem()
-                                .withIcon(FontAwesome.Icon.faw_gift)
-                                .withName("Donate")
+                                .withIcon(FontAwesome.Icon.faw_sign_out)
+                                .withName("ออกจากระบบ")
                                 .withSelectable(false)
-                                .withIconColor(getResources().getColor(R.color.colorAccent))
+                                .withIconColor(getResources().getColor(R.color.md_dark_appbar))
                                 .withIdentifier(4)
                 )
                 .withSelectedItem(-1)
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                   @Override
-                 public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                       if (drawerItem instanceof Nameable) {
-                           Toast.makeText(Menu.this, ((Nameable) drawerItem).getName().getText(Menu.this), Toast.LENGTH_SHORT).show();
-                       }
-                       FragmentManager manager = getSupportFragmentManager();
-                       FragmentTransaction transaction = manager.beginTransaction();
-                       switch (position) {
-                           case 0:
-                               Intent intent = new Intent(getApplicationContext(), Login.class);
-                               startActivity(intent);
+                                                   @Override
+                                                   public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                                                       if (drawerItem instanceof Nameable) {
+                                                           Toast.makeText(Menu.this, ((Nameable) drawerItem).getName().getText(Menu.this), Toast.LENGTH_SHORT).show();
+                                                       }
+                                                       FragmentManager manager = getSupportFragmentManager();
+                                                       FragmentTransaction transaction = manager.beginTransaction();
+                                                       switch (position) {
+                                                           case 0:
+                                                               Intent intent = new Intent(getApplicationContext(), Login.class);
+                                                               startActivity(intent);
 
-                               break;
-                           case 1:
+                                                               break;
+                                                           case 1:
 
-                               intent = new Intent(getApplicationContext(), StartApp2.class);
-                               startActivity(intent);
-                               break;
-                           case 2:
-                               tv.setText("Infoghaphic");
-                               intent = new Intent(getApplicationContext(), MainInfo.class);
-                               startActivity(intent);
+                                                               intent = new Intent(getApplicationContext(), StartApp2.class);
+                                                               startActivity(intent);
+                                                               break;
+                                                           case 2:
+                                                               tv.setText("Infoghaphic");
+                                                               intent = new Intent(getApplicationContext(), MainInfo.class);
+                                                               startActivity(intent);
 
-                               break;
+                                                               break;
 
-                           case 3:
-                               tv.setText("logout");
-                               session = new SessionManagement(getApplicationContext());
-                               intent = new Intent(getApplicationContext(), MainInfo.class);
-                               startActivity(intent);
+                                                           case 3:
+                                                               tv.setText("logout");
+                                                               session = new SessionManagement(getApplicationContext());
+                                                               intent = new Intent(getApplicationContext(), MainInfo.class);
+                                                               startActivity(intent);
 
-                               break;
-                       }
+                                                               break;
+                                                       }
 
-                       return false;
-                   }}
-                   ).build();
+                                                       return false;
+                                                   }
+                                               }
+                ).build();
 
 
     }

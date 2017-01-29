@@ -17,7 +17,8 @@ import com.example.whankung.socialherb.R;
 public class MainInfo extends AppCompatActivity {
 
     private Typeface font;
-
+    TextView tv;
+    ImageView img,i,i2,i3,i4,i5,i6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,20 +36,27 @@ public class MainInfo extends AppCompatActivity {
             }
         });
         setView();
+        setInfo();
 
 
     }
 
 
     private void setView() {
-        TextView tv = (TextView) findViewById(R.id.textView);
-
+        tv = (TextView) findViewById(R.id.textView);
+        img = (ImageView) findViewById(R.id.action_login);
+        i = (ImageView) findViewById(R.id.img);
+        i2 = (ImageView) findViewById(R.id.img2);
+        i3 = (ImageView) findViewById(R.id.img3);
+        i4 = (ImageView) findViewById(R.id.img4);
+        i5 = (ImageView) findViewById(R.id.img5);
+        i6 = (ImageView) findViewById(R.id.img6);
 
 //        เปลี่ยนfont
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
         tv.setTypeface(font);
 
-        ImageView img = (ImageView) findViewById(R.id.action_login);
+
         img.setVisibility(View.VISIBLE);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +68,7 @@ public class MainInfo extends AppCompatActivity {
             }
         });
 
-        ImageView i = (ImageView) findViewById(R.id.imageView2);
+
         i.setClickable(true);
         i.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +77,15 @@ public class MainInfo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
 
+    private void setInfo() {
+        i.setImageResource(R.drawable.img_in);
+        i2.setImageResource(R.drawable.img_in2);
+        i3.setImageResource(R.drawable.img_in3);
+        i4.setImageResource(R.drawable.img_in4);
+        i5.setImageResource(R.drawable.img_in5);
+        i6.setImageResource(R.drawable.img_in6);
     }
 }

@@ -16,26 +16,28 @@ import com.example.whankung.socialherb.R;
 public class HowtoHerbFragment extends android.support.v4.app.Fragment {
     private Typeface font;
     private View rootView;
+    private TextView p, pdata, h, hdata, t,tdata,ment,sub;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceStat) {
         rootView = inflater.inflate(R.layout.howto_herb, container, false);
         setView();
+        setData();
 
         return rootView;
     }
 
     private void setView() {
 
-        TextView p = (TextView) rootView.findViewById(R.id.proper);
-        TextView pdata = (TextView) rootView.findViewById(R.id.properdata);
-        TextView h = (TextView) rootView.findViewById(R.id.how);
-        TextView hdata = (TextView) rootView.findViewById(R.id.howdata);
-        TextView t = (TextView) rootView.findViewById(R.id.t);
-        TextView tdata = (TextView) rootView.findViewById(R.id.tdata);
-        TextView ment = (TextView) rootView.findViewById(R.id.ment);
-        TextView sub = (TextView) rootView.findViewById(R.id.submit);
+        p = (TextView) rootView.findViewById(R.id.proper);
+        pdata = (TextView) rootView.findViewById(R.id.properdata);
+        h = (TextView) rootView.findViewById(R.id.how);
+        hdata = (TextView) rootView.findViewById(R.id.howdata);
+        t = (TextView) rootView.findViewById(R.id.t);
+        tdata = (TextView) rootView.findViewById(R.id.tdata);
+        ment = (TextView) rootView.findViewById(R.id.ment);
+        sub = (TextView) rootView.findViewById(R.id.submit);
 
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         p.setTypeface(font);
@@ -47,5 +49,12 @@ public class HowtoHerbFragment extends android.support.v4.app.Fragment {
         ment.setTypeface(font);
         sub.setTypeface(font);
 
+    }
+
+    private void setData() {
+        pdata.setText("เปลือก – รักษาอาการท้องเสีย");
+        hdata.setText("1.นำเปลือกทับทิมมาต้มกับน้ำจนเดือดให้เด็กดื่มน้ำทับทิมครั้งละ1-2 ช้อนชา ทุก 4 ชั่วโมงและ1 ช้อนโต๊ะสำหรับผู้ใหญ่\n" +
+                "2.ใช้เปลือกแห้งฝนน้ำรับประทาน");
+        tdata.setText("คนที่แพ้ทับทิมจะเกิดอาการเป็นผื่นลมพิษ การบวมที่ลิ้น ริมฝีปาก มือ แขน ใบหน้า คันตา ตาแดง ระคายเคืองจูก หายใจลำบาก และเกิดภาวะแพ้รุนแรง(anaphylactic) และยังมีรายงานว่าเด็กที่รับประทานเมล็ดทับทิมแล้วเกิดอาการหอบหืดชนิดที่เกี่ยวข้องกับ IgE ขึ้น นอกจากนี้การทดสอบการแพ้ทางผิวหนังของผลสด พบว่ามีอาการแพ้");
     }
 }

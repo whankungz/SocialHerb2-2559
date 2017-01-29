@@ -67,7 +67,7 @@ public class MainHerb extends android.support.v4.app.Fragment {
 
 
                 search.setImeOptions(EditorInfo.IME_ACTION_DONE);
-                String strMsg = "whan";
+                String strMsg = "ทับทิม";
                 if (s.toString().equals(strMsg)) {
                     search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                         @Override
