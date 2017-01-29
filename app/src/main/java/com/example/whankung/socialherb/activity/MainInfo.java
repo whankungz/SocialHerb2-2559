@@ -17,8 +17,8 @@ import com.example.whankung.socialherb.R;
 public class MainInfo extends AppCompatActivity {
 
     private Typeface font;
-    TextView tv;
-    ImageView img,i,i2,i3,i4,i5,i6;
+    TextView tv, im, im2, im3, im4, im5,im6,p,p2,p3,p4,p5,p6;
+    ImageView img, i, i2, i3, i4, i5, i6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +51,34 @@ public class MainInfo extends AppCompatActivity {
         i4 = (ImageView) findViewById(R.id.img4);
         i5 = (ImageView) findViewById(R.id.img5);
         i6 = (ImageView) findViewById(R.id.img6);
+        im = (TextView) findViewById(R.id.im);
+        im2 = (TextView) findViewById(R.id.im2);
+        im3 = (TextView) findViewById(R.id.im3);
+        im4 = (TextView) findViewById(R.id.im4);
+        im5 = (TextView) findViewById(R.id.im5);
+        im6 = (TextView) findViewById(R.id.im6);
+        p = (TextView) findViewById(R.id.p);
+        p2 = (TextView) findViewById(R.id.p2);
+        p3 = (TextView) findViewById(R.id.p3);
+        p4 = (TextView)findViewById(R.id.p4);
+        p5 = (TextView) findViewById(R.id.p5);
+        p6 = (TextView) findViewById(R.id.p6);
 
 //        เปลี่ยนfont
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
         tv.setTypeface(font);
+        im.setTypeface(font);
+        im2.setTypeface(font);
+        im3.setTypeface(font);
+        im4.setTypeface(font);
+        im5.setTypeface(font);
+        im6.setTypeface(font);
+        p.setTypeface(font);
+        p2.setTypeface(font);
+        p3.setTypeface(font);
+        p4.setTypeface(font);
+        p5.setTypeface(font);
+        p6.setTypeface(font);
 
 
         img.setVisibility(View.VISIBLE);
@@ -87,5 +111,11 @@ public class MainInfo extends AppCompatActivity {
         i4.setImageResource(R.drawable.img_in4);
         i5.setImageResource(R.drawable.img_in5);
         i6.setImageResource(R.drawable.img_in6);
+        im.setText("7ข้อที่ชาวไร่ยาสูบ ยังได้รับ-ทำได้");
+        im2.setText("สงกรานต์ปลอดภัย ดื่มไม่ขับ");
+        im3.setText("9 วิธีเอาตัวรอดแบบไม่เสียเพื่อน");
+        im4.setText("สาเหตุหลักของการเกิดอุบัติเหตุ");
+        im5.setText("ลดความเร็ว ลดความเสี่ยง");
+        im6.setText("อาการเส้นเลือดในสมองตีบ");
     }
 }

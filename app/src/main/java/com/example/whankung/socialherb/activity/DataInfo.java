@@ -20,23 +20,34 @@ import com.example.whankung.socialherb.R;
 public class DataInfo extends AppCompatActivity {
     private View rootView;
     private Typeface font;
+    private TextView tvI, nameI, namefI, frI, submitI;
+    private ImageView i_Info,img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data_info);
         setView();
-
+        setData();
 
     }
 
     private void setView() {
-        TextView tv = (TextView) findViewById(R.id.textView);
+        tvI = (TextView) findViewById(R.id.textI);
+        nameI = (TextView) findViewById(R.id.nameI);
+        namefI = (TextView)findViewById(R.id.namefI);
+        frI = (TextView) findViewById(R.id.frI);
+        submitI = (TextView) findViewById(R.id.submitI);
+        i_Info = (ImageView) findViewById(R.id.i_Info);
 
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
-        tv.setTypeface(font);
+        tvI.setTypeface(font);
+        nameI.setTypeface(font);
+        namefI.setTypeface(font);
+        frI.setTypeface(font);
+        submitI.setTypeface(font);
 
-        ImageView img = (ImageView) findViewById(R.id.action_login);
+        img = (ImageView) findViewById(R.id.action_login);
         img.setVisibility(View.VISIBLE);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +58,11 @@ public class DataInfo extends AppCompatActivity {
 
             }
         });
+    }
 
-
+    private void setData() {
+        i_Info.setImageResource(R.drawable.img_in_big);
+        nameI.setText("7 ข้อที่ชาวไร่ยาสูบ ยังได้รับ-ทำได้");
+        frI.setText("http://www.thaihealth.or.th/Infographic/detail/");
     }
 }

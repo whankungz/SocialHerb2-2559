@@ -21,10 +21,10 @@
         android:scrollbars="none">
 
         <LinearLayout
+            android:layout_marginLeft="7dp"
             android:id="@+id/layoutScroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -72,7 +72,6 @@
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
                     android:textColor="#212121"
-                    android:textColorHint="#c1c1c1"
                     android:textSize="26dp" />
             </RelativeLayout>
 
@@ -100,7 +99,7 @@
                 android:background="#ffffff"
                 android:textColor="#212121"
                 android:textColorHint="#c1c1c1"
-                android:textSize="22dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tree"
@@ -132,8 +131,8 @@
                     android:layout_below="@id/imageView3"
                     android:background="#ffffff"
                     android:text=""
-                    android:textColor="#b9b8b8"
-                    android:textSize="22dp" />
+                    android:textColor="#212121"
+                    android:textSize="20dp" />
 
 
             </RelativeLayout>
@@ -153,7 +152,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center">
+                android:layout_gravity="center">
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -168,8 +167,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imageView4"
                     android:background="#ffffff"
-                    android:textColor="#b9b8b8"
-                    android:textSize="22dp" />
+                    android:textColor="#212121"
+                    android:textSize="20dp" />
             </RelativeLayout>
 
 
@@ -202,8 +201,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imageView5"
                     android:background="#ffffff"
-                    android:textColor="#b9b8b8"
-                    android:textSize="22dp" />
+                    android:textColor="#212121"
+                    android:textSize="20dp" />
             </RelativeLayout>
 
             <TextView
@@ -234,8 +233,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imageView6"
                     android:background="#ffffff"
-                    android:textColor="#b9b8b8"
-                    android:textSize="22dp" />
+                    android:textColor="#212121"
+                    android:textSize="20dp" />
             </RelativeLayout>
 
             <TextView
@@ -266,8 +265,8 @@
                     android:layout_below="@id/imageView7"
                     android:layout_centerHorizontal="true"
                     android:background="#ffffff"
-                    android:textColor="#b9b8b8"
-                    android:textSize="22dp" />
+                    android:textColor="#212121"
+                    android:textSize="20dp" />
             </RelativeLayout>
 
             <TextView
@@ -298,8 +297,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imageView8"
                     android:background="#ffffff"
-                    android:textColor="#b9b8b8"
-                    android:textSize="22dp" />
+                    android:textColor="#212121"
+                    android:textSize="20dp" />
 
             </RelativeLayout>
 

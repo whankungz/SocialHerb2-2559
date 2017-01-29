@@ -94,58 +94,66 @@ public class Menu extends AppCompatActivity {
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getActionBar().setHomeButtonEnabled(true);
 //        getActionBar().setHomeAsUpIndicator(R.d);
-        ProfileDrawerItem profileMain = new ProfileDrawerItem();
 
 
-        AccountHeader accountHeader = new AccountHeaderBuilder()
-                .withActivity(this)
-                .addProfiles(
-                        profileMain.withName("login")
-                )
 
-
-        .withTextColor(getResources().getColor(R.color.md_dark_appbar))
-
-                .withNameTypeface(Typeface.createFromAsset(getAssets(), "tmedium.ttf"))
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile iProfile, boolean b) {
-                        if (b == true) {
-                            Intent intent = new Intent(getApplicationContext(), Login.class);
-                            startActivity(intent);
-                        } else {
-
-                        }
-                        return false;
-                    }
-                })
-                .withProfileImagesClickable(true)
-                .withSelectionListEnabled(false)
-                .build();
-
-        session.checkLogin();
-
-        // get user data from session
-        HashMap<String, String> user = session.getUserDetails();
-
-        // name
-        String name = user.get(SessionManagement.KEY_NAME);
-
-        // email
-        String email = user.get(SessionManagement.KEY_EMAIL);
-        // displaying user data
-        accountHeader.equals(Html.fromHtml("Name: <b>" + name + "</b>"));
-
-        accountHeader.equals(Html.fromHtml("Email: <b>" + email + "</b>"));
+//....................    profile
+//        ProfileDrawerItem profileMain = new ProfileDrawerItem();
+//        AccountHeader accountHeader = new AccountHeaderBuilder()
+//                .withActivity(this)
+//                .addProfiles(
+//                        profileMain.withName("login")
+//                )
+//
+//
+//        .withTextColor(getResources().getColor(R.color.md_dark_appbar))
+//
+//                .withNameTypeface(Typeface.createFromAsset(getAssets(), "tmedium.ttf"))
+//                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+//                    @Override
+//                    public boolean onProfileChanged(View view, IProfile iProfile, boolean b) {
+//                        if (b == true) {
+//                            Intent intent = new Intent(getApplicationContext(), Login.class);
+//                            startActivity(intent);
+//                        } else {
+//
+//                        }
+//                        return false;
+//                    }
+//                })
+//                .withProfileImagesClickable(true)
+//                .withSelectionListEnabled(false)
+//                .build();
+//
+//        session.checkLogin();
+//
+//        // get user data from session
+//        HashMap<String, String> user = session.getUserDetails();
+//
+//        // name
+//        String name = user.get(SessionManagement.KEY_NAME);
+//
+//        // email
+//        String email = user.get(SessionManagement.KEY_EMAIL);
+//        // displaying user data
+//        accountHeader.equals(Html.fromHtml("Name: <b>" + name + "</b>"));
+//
+//        accountHeader.equals(Html.fromHtml("Email: <b>" + email + "</b>"));
 
 
         final Drawer drawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withActionBarDrawerToggle(true)
-                .withAccountHeader(accountHeader)
+//                .withAccountHeader(accountHeader)
                 .withCloseOnClick(true)
                 .addDrawerItems(
+                        new PrimaryDrawerItem()
+                                .withIcon(FontAwesome.Icon.faw_sign_in)
+                                .withName(String.valueOf(Html.fromHtml("ล็อกอิน")))
+                                .withIconColor(getResources().getColor(R.color.md_dark_appbar))
+                                .withIdentifier(0)
+                                .withSelectable(false),
                         new PrimaryDrawerItem()
                                 .withIcon(FontAwesome.Icon.faw_home)
                                 .withName(String.valueOf(Html.fromHtml("หน้าแรก")))
@@ -160,7 +168,34 @@ public class Menu extends AppCompatActivity {
                                 .withIdentifier(0)
                                 .withSelectable(false),
 
+
+                        new PrimaryDrawerItem()
+                                .withSelectable(false)
+                                .withIconColor(getResources().getColor(R.color.md_white_1000))
+                                .withIdentifier(3),
+                        new PrimaryDrawerItem()
+                                .withSelectable(false)
+                                .withIconColor(getResources().getColor(R.color.md_white_1000))
+                                .withIdentifier(3),
+                        new PrimaryDrawerItem()
+                                .withSelectable(false)
+                                .withIconColor(getResources().getColor(R.color.md_white_1000))
+                                .withIdentifier(3),
+                        new PrimaryDrawerItem()
+                                .withSelectable(false)
+                                .withIconColor(getResources().getColor(R.color.md_white_1000))
+                                .withIdentifier(3),
+                        new PrimaryDrawerItem()
+                                .withSelectable(false)
+                                .withIconColor(getResources().getColor(R.color.md_white_1000))
+                                .withIdentifier(3),
+
+
                         new DividerDrawerItem(),
+
+
+
+
 
                         new PrimaryDrawerItem()
                                 .withIcon(FontAwesome.Icon.faw_share)
