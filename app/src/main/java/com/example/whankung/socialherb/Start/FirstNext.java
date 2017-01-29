@@ -37,7 +37,7 @@ public class FirstNext extends Fragment {
     private void setView() {
 
         ImageView image = (ImageView) rootView.findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.ic_app);
+        image.setImageResource(R.drawable.ic_logo2);
 
 //        TextView tv = (TextView) rootView.findViewById(R.id.tv);
 //        TextView btnClick = (TextView) rootView.findViewById(R.id.tv_guide);

@@ -5,12 +5,12 @@
     <item
         android:id="@+id/menu_1"
         android:orderInCategory="1"
-        android:title="ล็อกอิน"
+        android:title="login"
         android:icon="@drawable/ic_login"
         app:showAsAction="never"/>
     <item
         android:id="@+id/menu_2"
-        android:orderInCategory="2"
+        android:orderInCategory="1"
         android:title="หน้าแรก"
         android:icon="@drawable/ic_home"
         app:showAsAction="never"/>
@@ -46,11 +46,6 @@
         android:orderInCategory="5"
         android:title="Infographic"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_7"
-        android:icon="@drawable/ic_info"
-        android:orderInCategory="5"
-        android:title="logout"
-        app:showAsAction="never" />
+
 
 </menu>

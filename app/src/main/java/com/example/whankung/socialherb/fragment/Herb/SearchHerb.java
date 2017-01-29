@@ -34,8 +34,8 @@ public class SearchHerb extends android.support.v4.app.Fragment{
     private void setView() {
         final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("ตรวจรางวัล"));
-        tabLayout.addTab(tabLayout.newTab().setText("เลขเด็ด"));
+        tabLayout.addTab(tabLayout.newTab().setText(""));
+        tabLayout.addTab(tabLayout.newTab().setText(""));
         viewPager.setAdapter(new SampleFragmentPagerAdapterHerb(getChildFragmentManager(),
                 getFragments()));
         tabLayout.setupWithViewPager(viewPager);
@@ -48,6 +48,9 @@ public class SearchHerb extends android.support.v4.app.Fragment{
 
             @Override
             public void onPageSelected(int position) {
+
+
+
 
             }
 

@@ -9,10 +9,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +27,8 @@ import com.example.whankung.socialherb.activity.Menu;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.String.valueOf;
+
 /**
  * Created by Whankung on 16/1/2560.
  */
@@ -31,29 +37,57 @@ public class MainHerb extends android.support.v4.app.Fragment {
     private View rootView;
     private TabLayout tabLayout;
     private Typeface font;
+    private EditText search;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceStat) {
         rootView = inflater.inflate(R.layout.stucture_herb, container, false);
         setView();
-
         return rootView;
     }
 
 
     private void setView() {
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
-        EditText search = (EditText)rootView.findViewById(R.id.search);
-       search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        search = (EditText) rootView.findViewById(R.id.search);
+        search.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
+            public void afterTextChanged(Editable arg0) {
 
-                    FragmentManager m =getFragmentManager();
-                    FragmentTransaction t =m.beginTransaction();
-                    t.replace(R.id.frgMain, new SearchHerb());
-                    t.commit();
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+                search.setImeOptions(EditorInfo.IME_ACTION_DONE);
+                String strMsg = "whan";
+                if (s.toString().equals(strMsg)) {
+                    search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                        @Override
+                        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                            if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+                                FragmentManager m = getFragmentManager();
+                                FragmentTransaction t = m.beginTransaction();
+                                t.replace(R.id.frgMain, new SearchHerb());
+                                t.commit();
+
+                            }
+                            return false;
+                        }
+                    });
+                }
+            }
+        });
+    }
 
 //                    FragmentManager manager = getSupportFragmentManager();
 //                    FragmentTransaction transaction = manager.beginTransaction();
@@ -61,51 +95,6 @@ public class MainHerb extends android.support.v4.app.Fragment {
 //                    transaction.commit();
 //                    SearchHerb();
 //                    return; true;
-                }
-                return false;
-            }
-        });
-//        final ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);
-//        tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
-//        tabLayout.addTab(tabLayout.newTab().setText("ตรวจรางวัล"));
-//        tabLayout.addTab(tabLayout.newTab().setText("เลขเด็ด"));
-//        viewPager.setAdapter(new SampleFragmentPagerAdapterHerb(getChildFragmentManager(),
-//                getFragments()));
-//        tabLayout.setupWithViewPager(viewPager);
-//
-//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//
-//            }
-//        });
-////        เปลี่ยน font tab
-//        SampleFragmentPagerAdapterHerb.applyFontedTab(getActivity().getApplicationContext(),viewPager,tabLayout);
-//
-//    }
-//
-//
-//
-//    private List<Fragment> getFragments() {
-//
-//        List<Fragment> fList = new ArrayList<Fragment>();
-//        fList.add(new GeneralHerbFragment());
-//        fList.add(new HowtoHerbFragment());
-//        fList.add(new ResearchHerbFragment());
-//        return fList;
-    }
-
-
 
 }
 

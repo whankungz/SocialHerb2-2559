@@ -29,10 +29,14 @@ public class ResearchHerbFragment extends android.support.v4.app.Fragment {
     private void setView() {
         TextView re = (TextView) rootView.findViewById(R.id.research);
         TextView fromre = (TextView) rootView.findViewById(R.id.fromre);
+        TextView link = (TextView) rootView.findViewById(R.id.link);
+        TextView flink = (TextView) rootView.findViewById(R.id.fromlink);
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
 
         re.setTypeface(font);
         fromre.setTypeface(font);
+        link.setTypeface(font);
+        flink.setTypeface(font);
 
 
 

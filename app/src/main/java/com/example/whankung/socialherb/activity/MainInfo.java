@@ -3,17 +3,12 @@ package com.example.whankung.socialherb.activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
-import com.example.whankung.socialherb.activity.Login;
-import com.example.whankung.socialherb.activity.Menu;
 
 /**
  * Created by Whankung on 19/1/2560.
@@ -64,6 +59,17 @@ public class MainInfo extends AppCompatActivity {
 
             }
         });
+
+        ImageView i = (ImageView) findViewById(R.id.imageView2);
+        i.setClickable(true);
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DataInfo.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

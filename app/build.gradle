@@ -42,6 +42,8 @@ dependencies {
         compile 'info.hoang8f:android-segmented:1.0.6'
     }
 
+    compile 'com.mikepenz:fontawesome-typeface:4.6.0.3@aar'
+
 }
 repositories {
     maven { url 'http://yanzm.github.io/MaterialTabHost/repository' }

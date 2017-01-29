@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
 
     <ScrollView
@@ -19,96 +22,69 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/nameD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:text="ชื่อโรค"
-        android:textColor="#848484"
-        android:textColorHint="#c1c1c1"
-        android:textSize="24dp" />
-
-    <TextView
-        android:layout_marginLeft="80dp"
-        android:id="@+id/nameDdata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:text="ชื่อโgdggddรค"
-        android:textColor="#151515"
-        android:textColorHint="#c1c1c1"
-        android:textSize="24dp" />
-</RelativeLayout>
-
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/nameOther"
+                    android:id="@+id/nameA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
-                    android:text="ชื่ออื่น ๆ"
+                    android:text="ชื่อบทความ"
                     android:textColor="#848484"
                     android:textColorHint="#c1c1c1"
-                    android:textSize="22dp" />
+                    android:textSize="24dp" />
 
                 <TextView
-                    android:layout_marginLeft="80dp"
-                    android:id="@+id/nameOtherda"
+                    android:layout_marginLeft="100dp"
+                    android:id="@+id/nameDdataA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
-                    android:text="ชื่ออื่นๆ"
+                    android:text="ชื่อโgdggddรค"
                     android:textColor="#151515"
                     android:textColorHint="#c1c1c1"
-                    android:textSize="22dp" />
+                    android:textSize="24dp" />
             </RelativeLayout>
+            <ImageView
+                android:layout_marginTop="14dp"
+                android:layout_gravity="center"
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/img_herb2" />
+
+
+                <TextView
+                    android:layout_marginTop="14dp"
+                    android:id="@+id/namef"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:text="ชdgfdfdhgfcxvcgfdgfdhsfdjhfjhjdgdfgdfhfhghghghghghgfgfggsgrfgrfgghghfghs"
+                    android:textColor="#151515"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_marginTop="14dp"
+                    android:id="@+id/namefda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:text="ที่มา"
+                    android:textColor="#848484"
+                    android:textSize="18dp" />
 
             <TextView
-                android:layout_marginTop="14dp"
-                android:id="@+id/namewhy"
+                android:id="@+id/namefdat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#ffffff"
-                android:text="อาการ"
-                android:textColor="#848484"
-                android:textColorHint="#c1c1c1"
-                android:textSize="18dp" />
-            <TextView
-                android:id="@+id/namewhyda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#ffffff"
-                android:text="อากาhdhshtjfyjyjurshtgjygkyrtrhythttydhxfhtdhttร"
+                android:text="fdgdsgrfdgfghgjgfjfhsdfอาการ"
                 android:textColor="#151515"
-                android:textColorHint="#c1c1c1"
                 android:textSize="20dp" />
-            <TextView
-                android:layout_marginTop="14dp"
-                android:id="@+id/namehow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#ffffff"
-                android:text="วิธีการบรรเทา"
-                android:textColor="#848484"
-                android:textColorHint="#c1c1c1"
-                android:textSize="18dp" />
-            <TextView
-                android:id="@+id/namehowda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#ffffff"
-                android:text="วิธีการบรรเทgdhgcfjgjhjyyfuutdhgjhthgา"
-                android:textColor="#151515"
-                android:textColorHint="#c1c1c1"
-                android:textSize="20dp" />
+
             <View
                 android:layout_marginTop="14dp"
                 android:layout_width="wrap_content"
@@ -141,8 +117,17 @@
                 android:text="ตกลง"
                 android:textColor="#ffffff"
                 android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/null2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#ffffff"
+                android:textSize="50dp" />
+
+
         </LinearLayout>
     </ScrollView>
 
-
-        </LinearLayout>
+</LinearLayout>

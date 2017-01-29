@@ -16,6 +16,8 @@
         android:background="@drawable/bg_shape_popup"
         android:hint="ค้นหา"
         android:textColor="#979797"
+        android:imeOptions="actionDone"
+        android:inputType="textImeMultiLine"
         android:id="@+id/search"
         android:singleLine="true" />
     <FrameLayout
