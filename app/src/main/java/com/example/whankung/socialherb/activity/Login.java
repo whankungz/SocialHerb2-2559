@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.whankung.socialherb.R;
+import com.example.whankung.socialherb.fragment.Disease.SearchDisease;
+import com.example.whankung.socialherb.fragment.Herb.SampleFragmentPagerAdapterHerb;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -153,6 +155,8 @@ public class Login extends AppCompatActivity {
                     // username = test
                     // password = test
                     if (username.equals("test") && Password.equals("test")) {
+
+
 
 
                       // Creating user login session
