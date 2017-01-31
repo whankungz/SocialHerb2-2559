@@ -11,7 +11,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/custom_toolbar" />
+            layout="@layout/custom_toolbar_login" />
 
         <TextView
             android:id="@+id/textView"
@@ -20,11 +20,12 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="หน่วยงานที่เกี่ยวข้อง"
-            android:textColor="#228B22"
+            android:textColor="#ffffff"
             android:textSize="20dp" />
     </RelativeLayout>
 
     <ScrollView
+        android:layout_margin="15dp"
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,194 +38,159 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp">
-
-                <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp" />
-
-                <ImageView
-                    android:id="@+id/img2"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="155dp" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp">
-
-                <TextView
-                    android:id="@+id/im"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#1d1d1d"
-                    android:textSize="16dp" />
-
-
-                <TextView
-                    android:id="@+id/im2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="160dp"
-                    android:textColor="#1d1d1d"
-                    android:textSize="16dp" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginLeft="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/p"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-                <TextView
-                    android:paddingLeft="160dp"
-                    android:id="@+id/p2"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp">
-
-                <ImageView
-                    android:id="@+id/img3"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp" />
-
-                <ImageView
-                    android:id="@+id/img4"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="155dp" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp">
-
-                <TextView
-                    android:id="@+id/im3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#1d1d1d"
-                    android:textSize="16dp" />
-
-
-                <TextView
-                    android:id="@+id/im4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="160dp"
-                    android:textColor="#1d1d1d"
-                    android:textSize="16dp" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginLeft="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/p3"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-                <TextView
-                    android:paddingLeft="160dp"
-                    android:id="@+id/p4"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="7dp">
-
-                <ImageView
-                    android:id="@+id/img5"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp" />
-
-                <ImageView
-                    android:id="@+id/img6"
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="155dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp">
-
-                <TextView
-                    android:id="@+id/im5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#1d1d1d"
-                    android:textSize="16dp" />
-
-
-                <TextView
-                    android:id="@+id/im6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="160dp"
-                    android:textColor="#1d1d1d"
-                    android:textSize="16dp" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginLeft="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/p5"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-                <TextView
-                    android:paddingLeft="160dp"
-                    android:id="@+id/p6"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-
-            </RelativeLayout>
             <TextView
+                android:id="@+id/nameOf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="50dp" />
+                android:background="#ffffff"
+                android:textColor="#151515"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:id="@+id/addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="ที่อยู่"
+                android:textColor="#b1b0b0"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/addrdata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#151515"
+                android:textSize="16dp" />
+
+            <TextView
+
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/fax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/mailOf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/whyOf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="บทบาทหน้าที่"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/whyOfdata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#151515"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#65abd4"
+                android:textSize="16dp" />
+            <View
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0.9dp"
+                android:background="#d7d7d7" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/nameOf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#151515"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:id="@+id/addr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="ที่อยู่"
+                android:textColor="#b1b0b0"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/addrdata2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#151515"
+                android:textSize="16dp" />
+
+            <TextView
+
+                android:id="@+id/call2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/fax2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/mailOf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/whyOf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="บทบาทหน้าที่"
+                android:textColor="#b1b0b0"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/whyOfdata2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#151515"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/web2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:textColor="#65abd4"
+                android:textSize="16dp" />
+
 
         </LinearLayout>
     </ScrollView>

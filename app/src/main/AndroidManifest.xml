@@ -25,8 +25,8 @@
         <activity android:name=".activity.MainFood"></activity>
         <activity android:name=".activity.DataFood"></activity>
         <activity android:name=".activity.MainOffice"></activity>
-        <activity android:name=".activity.DataOffice"></activity>
         <activity android:name=".activity.MainInvite"></activity>
+        <activity android:name=".activity.ShareF"></activity>
 
 
 

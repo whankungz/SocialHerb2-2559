@@ -63,7 +63,7 @@ public class Register extends AppCompatActivity {
         });
 
 
-        ImageView img = (ImageView) findViewById(R.id.action);
+        ImageView img = (ImageView) findViewById(R.id.action_login);
         img.setVisibility(View.VISIBLE);
         img.setOnClickListener(new View.OnClickListener() {
             @Override

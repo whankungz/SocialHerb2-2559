@@ -490,7 +490,7 @@ public class Menu extends AppCompatActivity {
                                                            case 4:
                                                                tv.setText("แชร์");
                                                                session = new SessionManagement(getApplicationContext());
-                                                               intent = new Intent(getApplicationContext(), MainShare.class);
+                                                               intent = new Intent(getApplicationContext(), ShareF.class);
                                                                startActivity(intent);
 
                                                                break;

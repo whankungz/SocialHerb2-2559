@@ -17,8 +17,8 @@ import com.example.whankung.socialherb.R;
 public class MainInfo extends AppCompatActivity {
 
     private Typeface font;
-    TextView tv, im, im2, im3, im4, im5,im6,p,p2,p3,p4,p5,p6,st,st2,st3,st4,st5,st6;
-    ImageView img, i, i2, i3, i4, i5, i6,sta,sta2,sta3,sta4,sta5,sta6;
+    TextView tv, im, im2, im3, im4, im5, im6, p, p2, p3, p4, p5, p6, st, st2, st3, st4, st5, st6;
+    ImageView img, i, i2, i3, i4, i5, i6, sta, sta2, sta3, sta4, sta5, sta6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +43,13 @@ public class MainInfo extends AppCompatActivity {
 
 
     private void setView() {
-        st= (TextView) findViewById(R.id.st);
-        st2= (TextView) findViewById(R.id.st2);
-        st3= (TextView) findViewById(R.id.st3);
-        st4= (TextView) findViewById(R.id.st4);
-        st5= (TextView) findViewById(R.id.st5);
-        st6= (TextView) findViewById(R.id.st6);
+
+        st = (TextView) findViewById(R.id.st);
+        st2 = (TextView) findViewById(R.id.st2);
+        st3 = (TextView) findViewById(R.id.st3);
+        st4 = (TextView) findViewById(R.id.st4);
+        st5 = (TextView) findViewById(R.id.st5);
+        st6 = (TextView) findViewById(R.id.st6);
 
         sta = (ImageView) findViewById(R.id.sta);
         sta2 = (ImageView) findViewById(R.id.sta2);
@@ -58,7 +59,7 @@ public class MainInfo extends AppCompatActivity {
         sta6 = (ImageView) findViewById(R.id.sta6);
 
         tv = (TextView) findViewById(R.id.textView);
-       // img = (ImageView) findViewById(R.id.action_login);
+        // img = (ImageView) findViewById(R.id.action_login);
         i = (ImageView) findViewById(R.id.img);
         i2 = (ImageView) findViewById(R.id.img2);
         i3 = (ImageView) findViewById(R.id.img3);
@@ -74,10 +75,9 @@ public class MainInfo extends AppCompatActivity {
         p = (TextView) findViewById(R.id.p);
         p2 = (TextView) findViewById(R.id.p2);
         p3 = (TextView) findViewById(R.id.p3);
-        p4 = (TextView)findViewById(R.id.p4);
+        p4 = (TextView) findViewById(R.id.p4);
         p5 = (TextView) findViewById(R.id.p5);
         p6 = (TextView) findViewById(R.id.p6);
-
 
 
 //        เปลี่ยนfont
@@ -101,6 +101,7 @@ public class MainInfo extends AppCompatActivity {
         st4.setTypeface(font);
         st5.setTypeface(font);
         st6.setTypeface(font);
+
 
         img.setVisibility(View.VISIBLE);
         img.setOnClickListener(new View.OnClickListener() {

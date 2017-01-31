@@ -11,7 +11,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/custom_toolbar" />
+            layout="@layout/custom_toolbar_login" />
 
         <TextView
             android:id="@+id/textView"
@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="อาหารเพื่อสุขภาพ"
-            android:textColor="#228B22"
+            android:textColor="#ffffff"
             android:textSize="20dp" />
     </RelativeLayout>
 

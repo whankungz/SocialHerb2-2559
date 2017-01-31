@@ -49,10 +49,11 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            app:srcCompat="@drawable/ic_mind"
             android:id="@+id/peop"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:srcCompat="@drawable/ic_mind" />
+            />
 
         <TextView
             android:layout_marginTop="7dp"
@@ -66,8 +67,7 @@
             android:text="mind@hotmail.com"
             android:textSize="22dp" />
 
-
-    </RelativeLayout>
+   </RelativeLayout>
 
     <View
         android:layout_width="wrap_content"

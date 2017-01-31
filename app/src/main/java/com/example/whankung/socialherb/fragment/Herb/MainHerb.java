@@ -1,7 +1,9 @@
 package com.example.whankung.socialherb.fragment.Herb;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -20,6 +22,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
@@ -49,8 +52,11 @@ public class MainHerb extends android.support.v4.app.Fragment {
         rootView = inflater.inflate(R.layout.stucture_herb, container, false);
         setView();
         setShowHerb();
+
         return rootView;
     }
+
+
 
     private void setView() {
       //  tb = (TextView) rootView.findViewById(R.id.toolbar_title);

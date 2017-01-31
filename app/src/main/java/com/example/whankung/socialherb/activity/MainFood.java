@@ -17,14 +17,14 @@ public class MainFood  extends AppCompatActivity {
 
     private Typeface font;
     TextView tv, im, im2, im3, im4, im5,im6,p,p2,p3,p4,p5,p6;
-    ImageView imW, i, i2, i3, i4, i5, i6;
+    ImageView img, i, i2, i3, i4, i5, i6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stucture_food);
-        ImageView imW = (ImageView) findViewById(R.id.action);
-        imW.setVisibility(View.VISIBLE);
-        imW.setOnClickListener(new View.OnClickListener() {
+        ImageView img = (ImageView) findViewById(R.id.action_login);
+        img.setVisibility(View.VISIBLE);
+        img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //กลับไปยังหน้าเลือกเภสัช
@@ -41,7 +41,7 @@ public class MainFood  extends AppCompatActivity {
 
     private void setView() {
         tv = (TextView) findViewById(R.id.textView);
-        imW = (ImageView) findViewById(R.id.action);
+        img = (ImageView) findViewById(R.id.action_login);
         i = (ImageView) findViewById(R.id.img);
         i2 = (ImageView) findViewById(R.id.img2);
         i3 = (ImageView) findViewById(R.id.img3);
@@ -72,8 +72,8 @@ public class MainFood  extends AppCompatActivity {
         p4.setTypeface(font);
 
 
-        imW.setVisibility(View.VISIBLE);
-        imW.setOnClickListener(new View.OnClickListener() {
+        img.setVisibility(View.VISIBLE);
+        img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

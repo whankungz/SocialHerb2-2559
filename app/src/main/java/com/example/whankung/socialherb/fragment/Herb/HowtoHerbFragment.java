@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
@@ -16,7 +17,8 @@ import com.example.whankung.socialherb.R;
 public class HowtoHerbFragment extends android.support.v4.app.Fragment {
     private Typeface font;
     private View rootView;
-    private TextView p, pdata, h, hdata, t,tdata,ment,sub;
+    private TextView p, pdata, h, hdata, t, tdata, ment, sub, nm, un, date;
+    private RatingBar rat;
 
     @Nullable
     @Override
@@ -24,12 +26,17 @@ public class HowtoHerbFragment extends android.support.v4.app.Fragment {
         rootView = inflater.inflate(R.layout.howto_herb, container, false);
         setView();
         setData();
-
+        setRating();
         return rootView;
     }
 
-    private void setView() {
+    private void setRating() {
+    }
 
+    private void setView() {
+        date = (TextView) rootView.findViewById(R.id.date);
+        nm = (TextView) rootView.findViewById(R.id.nameMe);
+        un = (TextView) rootView.findViewById(R.id.Uname);
         p = (TextView) rootView.findViewById(R.id.proper);
         pdata = (TextView) rootView.findViewById(R.id.properdata);
         h = (TextView) rootView.findViewById(R.id.how);
@@ -48,7 +55,9 @@ public class HowtoHerbFragment extends android.support.v4.app.Fragment {
         tdata.setTypeface(font);
         ment.setTypeface(font);
         sub.setTypeface(font);
-
+        nm.setTypeface(font);
+        un.setTypeface(font);
+        date.setTypeface(font);
     }
 
     private void setData() {

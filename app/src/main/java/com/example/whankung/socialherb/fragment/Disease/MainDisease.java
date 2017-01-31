@@ -29,8 +29,8 @@ import static com.example.whankung.socialherb.R.id.searchD;
 public class MainDisease extends android.support.v4.app.Fragment{
     private View rootView;
     private Typeface font;
-    private TextView t_H, t_H2, t_H3, t_H4, p, p2, p3, p4,s,s2,s3,s4,tb;
-    private ImageView i_H, i_H2, i_H3, i_H4, star, star2, star3, star4;
+    private TextView t_H, t_H2, t_H3, t_H4, t_H5, t_H6, t_H7,s,s2,s3,s4,s5,s6,s7,tb;
+    private ImageView i_H, i_H2, i_H3, i_H4,i_H5,i_H6,i_H7, star, star2, star3, star4, star5, star6, star7;
 
     @Nullable
     @Override
@@ -49,36 +49,46 @@ public class MainDisease extends android.support.v4.app.Fragment{
         s2= (TextView) rootView.findViewById(R.id.s2);
         s3= (TextView) rootView.findViewById(R.id.s3);
         s4= (TextView) rootView.findViewById(R.id.s4);
-        p = (TextView) rootView.findViewById(R.id.p);
-        p2 = (TextView) rootView.findViewById(R.id.p2);
-        p3 = (TextView) rootView.findViewById(R.id.p3);
-        p4 = (TextView) rootView.findViewById(R.id.p4);
+        s5= (TextView) rootView.findViewById(R.id.s5);
+        s6= (TextView) rootView.findViewById(R.id.s6);
+        s7= (TextView) rootView.findViewById(R.id.s7);
         t_H = (TextView) rootView.findViewById(R.id.t_H);
         t_H2 = (TextView) rootView.findViewById(R.id.t_H2);
         t_H3 = (TextView) rootView.findViewById(R.id.t_H3);
         t_H4 = (TextView) rootView.findViewById(R.id.t_H4);
+        t_H5 = (TextView) rootView.findViewById(R.id.t_H5);
+        t_H6 = (TextView) rootView.findViewById(R.id.t_H6);
+        t_H7 = (TextView) rootView.findViewById(R.id.t_H7);
         i_H = (ImageView) rootView.findViewById(R.id.i_H);
         i_H2 = (ImageView) rootView.findViewById(R.id.i_H2);
         i_H3 = (ImageView) rootView.findViewById(R.id.i_H3);
         i_H4 = (ImageView) rootView.findViewById(R.id.i_H4);
+        i_H5 = (ImageView) rootView.findViewById(R.id.i_H5);
+        i_H6 = (ImageView) rootView.findViewById(R.id.i_H6);
+        i_H7 = (ImageView) rootView.findViewById(R.id.i_H7);
         star = (ImageView) rootView.findViewById(R.id.star);
         star2 = (ImageView) rootView.findViewById(R.id.star2);
         star3 = (ImageView) rootView.findViewById(R.id.star3);
         star4 = (ImageView) rootView.findViewById(R.id.star4);
+        star5 = (ImageView) rootView.findViewById(R.id.star5);
+        star6 = (ImageView) rootView.findViewById(R.id.star6);
+        star7 = (ImageView) rootView.findViewById(R.id.star7);
 
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         t_H.setTypeface(font);
         t_H2.setTypeface(font);
         t_H3.setTypeface(font);
         t_H4.setTypeface(font);
-        p.setTypeface(font);
-        p2.setTypeface(font);
-        p3.setTypeface(font);
-        p4.setTypeface(font);
+        t_H5.setTypeface(font);
+        t_H6.setTypeface(font);
+        t_H7.setTypeface(font);
         s.setTypeface(font);
         s2.setTypeface(font);
         s3.setTypeface(font);
         s4.setTypeface(font);
+        s5.setTypeface(font);
+        s6.setTypeface(font);
+        s7.setTypeface(font);
 //        tb.setTypeface(font);
 
         final EditText searchD = (EditText)rootView.findViewById(R.id.searchD);
@@ -143,17 +153,26 @@ public class MainDisease extends android.support.v4.app.Fragment{
 //    }
 
     private void setShow() {
-        i_H.setImageResource(R.drawable.img_grass);
-        t_H.setText("ตะไคร้");
-        i_H2.setImageResource(R.drawable.img_ruby4);
-        t_H2.setText("ทับทิม");
-        i_H3.setImageResource(R.drawable.img_lemon2);
-        t_H3.setText("มะนาว");
-        i_H4.setImageResource(R.drawable.img_fa);
-        t_H4.setText("ฟ้าทะลายโจร");
+        i_H.setImageResource(R.drawable.ic_dise);
+        t_H.setText("ไข้เลือดออก");
+        i_H2.setImageResource(R.drawable.ic_dise);
+        t_H2.setText("ไข้หวัดใหญ่");
+        i_H3.setImageResource(R.drawable.ic_dise);
+        t_H3.setText("ท้องเสีย");
+        i_H4.setImageResource(R.drawable.ic_dise);
+        t_H4.setText("ปวดฟัน");
+        i_H5.setImageResource(R.drawable.ic_dise);
+        t_H5.setText("ตาแดง");
+        i_H6.setImageResource(R.drawable.ic_dise);
+        t_H6.setText("เหน็บชา");
+        i_H7.setImageResource(R.drawable.ic_dise);
+        t_H7.setText("กระเพาะอาหารอักเสบ");
         star.setImageResource(R.drawable.ic_star2);
         star2.setImageResource(R.drawable.ic_star2);
         star3.setImageResource(R.drawable.ic_star2);
         star4.setImageResource(R.drawable.ic_star2);
+        star5.setImageResource(R.drawable.ic_star2);
+        star6.setImageResource(R.drawable.ic_star2);
+        star7.setImageResource(R.drawable.ic_star2);
     }
 }

@@ -1,8 +1,11 @@
 package com.example.whankung.socialherb.fragment.Herb;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
+import com.example.whankung.socialherb.activity.Menu;
+import com.example.whankung.socialherb.fragment.Disease.SearchDisease;
+import com.example.whankung.socialherb.fragment.Favorite.MainFavorite;
 
 /**
  * Created by Whankung on 22/1/2560.
@@ -20,7 +26,7 @@ public class GeneralHerbFragment extends android.support.v4.app.Fragment {
     private Typeface font;
     private EditText search;
     private TextView herb, herb2, other, other2, see, see2, t, t2, t3, t4, t5, t6, data, data2, data3, data4, data5, data6;
-    private ImageView i1, i2, i3, i4, i5, i6, i7;
+    private ImageView i1, i2, i3, i4, i5, i6, i7,fav;
 
     @Nullable
     @Override
@@ -61,6 +67,19 @@ public class GeneralHerbFragment extends android.support.v4.app.Fragment {
         i6 = (ImageView) rootView.findViewById(R.id.imageView7);
         i7 = (ImageView) rootView.findViewById(R.id.imageView8);
 
+        fav = (ImageView) rootView.findViewById(R.id.favo);
+
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager m = getFragmentManager();
+                FragmentTransaction t = m.beginTransaction();
+                t.replace(R.id.container, new MainFavorite());
+                t.commit();
+            }
+        });
+
+
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         herb.setTypeface(font);
         other.setTypeface(font);
@@ -81,6 +100,7 @@ public class GeneralHerbFragment extends android.support.v4.app.Fragment {
         data5.setTypeface(font);
         data6.setTypeface(font);
     }
+
 
     private void setSearch() {
         herb2.setText("ทับทิม");
