@@ -24,8 +24,8 @@ import com.example.whankung.socialherb.fragment.Disease.SearchDisease;
 public class MainArticle extends android.support.v4.app.Fragment {
     private View rootView;
     private Typeface font;
-    private ImageView i1, i2, i3, i4, i5;
-    private TextView im, im2,im3,im4,im5,p,p2,p3,p4,p5;
+    private ImageView i1, i2, i3, i4, i5, star, star2, star3, star4,star5;
+    private TextView im, im2,im3,im4,im5,p,p2,p3,p4,p5,tb,s,s2,s3,s4,s5;
 
     @Nullable
     @Override
@@ -39,6 +39,13 @@ public class MainArticle extends android.support.v4.app.Fragment {
 
 
     private void setView() {
+//        tb = (TextView) rootView.findViewById(R.id.toolbar_title);
+//        tb.setText("บทความ");
+        s= (TextView) rootView.findViewById(R.id.s);
+        s2= (TextView) rootView.findViewById(R.id.s2);
+        s3= (TextView) rootView.findViewById(R.id.s3);
+        s4= (TextView) rootView.findViewById(R.id.s4);
+        s5= (TextView) rootView.findViewById(R.id.s5);
         im = (TextView) rootView.findViewById(R.id.im);
         im2 = (TextView) rootView.findViewById(R.id.im2);
         im3 = (TextView) rootView.findViewById(R.id.im3);
@@ -49,6 +56,12 @@ public class MainArticle extends android.support.v4.app.Fragment {
         p3 = (TextView) rootView.findViewById(R.id.p3);
         p4 = (TextView) rootView.findViewById(R.id.p4);
         p5 = (TextView) rootView.findViewById(R.id.p5);
+
+        star = (ImageView) rootView.findViewById(R.id.star);
+        star2 = (ImageView) rootView.findViewById(R.id.star2);
+        star3 = (ImageView) rootView.findViewById(R.id.star3);
+        star4 = (ImageView) rootView.findViewById(R.id.star4);
+        star5 = (ImageView) rootView.findViewById(R.id.star5);
 
 
         i1 = (ImageView) rootView.findViewById(R.id.imageView2);
@@ -68,6 +81,13 @@ public class MainArticle extends android.support.v4.app.Fragment {
         p3.setTypeface(font);
         p4.setTypeface(font);
         p5.setTypeface(font);
+//        tb.setTypeface(font);
+
+        s.setTypeface(font);
+        s2.setTypeface(font);
+        s3.setTypeface(font);
+        s4.setTypeface(font);
+        s5.setTypeface(font);
 
 
         i1.setClickable(true);
@@ -76,7 +96,7 @@ public class MainArticle extends android.support.v4.app.Fragment {
             public void onClick(View v) {
                 FragmentManager m = getFragmentManager();
                 FragmentTransaction t = m.beginTransaction();
-                t.replace(R.id.frgMain, new DataArticle());
+                t.replace(R.id.container, new DataArticle());
                 t.commit();
             }
         });
@@ -85,15 +105,21 @@ public class MainArticle extends android.support.v4.app.Fragment {
 
 
     private void setArticle() {
+        star.setImageResource(R.drawable.ic_star2);
+        star2.setImageResource(R.drawable.ic_star2);
+        star3.setImageResource(R.drawable.ic_star2);
+        star4.setImageResource(R.drawable.ic_star2);
+        star5.setImageResource(R.drawable.ic_star2);
+
         i1.setImageResource(R.drawable.img_a);
         im.setText("‘โรคอ้วน’ มหันตภัยมืดมนุษย์เมือง");
         i2.setImageResource(R.drawable.img_a2);
         im2.setText("ส้มซ่า และ ส้มสา");
-        i3.setImageResource(R.drawable.img_a3);
+        i3.setImageResource(R.drawable.img_a5);
         im3.setText("คอเรสเตอรอลในไข่ไก่");
         i4.setImageResource(R.drawable.img_a4);
         im4.setText("‘กล้วย’อาหารสุขภาพทุกเพศทุกวัย");
-        i5.setImageResource(R.drawable.img_a5);
+        i5.setImageResource(R.drawable.img_a3);
         im5.setText("กินยาเยอะ ทำให้ตับไตพังจริงหรือ?");
     }
 }

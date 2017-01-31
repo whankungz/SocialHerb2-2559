@@ -39,7 +39,7 @@ public class MainHerb extends android.support.v4.app.Fragment {
     private TabLayout tabLayout;
     private Typeface font;
     private EditText search;
-    private TextView t_H, t_H2, t_H3, t_H4, p, p2, p3, p4,s,s2,s3,s4;
+    private TextView t_H, t_H2, t_H3, t_H4, p, p2, p3, p4,s,s2,s3,s4,tb;
     private ImageView i_H, i_H2, i_H3, i_H4, star, star2, star3, star4;
 
 
@@ -53,6 +53,8 @@ public class MainHerb extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
+      //  tb = (TextView) rootView.findViewById(R.id.toolbar_title);
+      //  tb.setText("สมุนไพร");
         s= (TextView) rootView.findViewById(R.id.s);
         s2= (TextView) rootView.findViewById(R.id.s2);
         s3= (TextView) rootView.findViewById(R.id.s3);
@@ -87,6 +89,7 @@ public class MainHerb extends android.support.v4.app.Fragment {
         s2.setTypeface(font);
         s3.setTypeface(font);
         s4.setTypeface(font);
+       // tb.setTypeface(font);
 
         search = (EditText) rootView.findViewById(R.id.search);
         search.addTextChangedListener(new TextWatcher() {
@@ -115,7 +118,7 @@ public class MainHerb extends android.support.v4.app.Fragment {
 
                                 FragmentManager m = getFragmentManager();
                                 FragmentTransaction t = m.beginTransaction();
-                                t.replace(R.id.frgMain, new SearchHerb());
+                                t.replace(R.id.container, new SearchHerb());
                                 t.commit();
 
                             }

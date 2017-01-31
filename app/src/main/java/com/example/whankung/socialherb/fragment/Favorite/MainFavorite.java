@@ -18,7 +18,7 @@ import com.example.whankung.socialherb.R;
 public class MainFavorite extends android.support.v4.app.Fragment {
     private View rootView;
     private Typeface font;
-    private TextView t_H, t_H2, t_H3, t_H4, p, p2, p3, p4, s, s2, s3, s4;
+    private TextView t_H, t_H2, t_H3, t_H4, p, p2, p3, p4, s, s2, s3, s4,tb;
     private ImageView i_H, i_H2, i_H3, i_H4, star, star2, star3, star4;
 
     @Nullable
@@ -31,6 +31,8 @@ public class MainFavorite extends android.support.v4.app.Fragment {
     }
 
     private void setView() {
+//        tb = (TextView) rootView.findViewById(R.id.toolbar_title);
+//        tb.setText("รายการโปรด");
         t_H = (TextView) rootView.findViewById(R.id.t_H);
         t_H2 = (TextView) rootView.findViewById(R.id.t_H2);
 //        t_H3 = (TextView) rootView.findViewById(R.id.t_H3);
@@ -43,6 +45,7 @@ public class MainFavorite extends android.support.v4.app.Fragment {
         font = Typeface.createFromAsset(getContext().getAssets(), "tmedium.ttf");
         t_H.setTypeface(font);
         t_H2.setTypeface(font);
+//        tb.setTypeface(font);
 //        t_H3.setTypeface(font);
 //        t_H4.setTypeface(font);
 

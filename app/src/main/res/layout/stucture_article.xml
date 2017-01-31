@@ -28,15 +28,15 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"/>
 
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="155dp" />
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="155dp" />
 
             </RelativeLayout>
 
@@ -81,6 +81,35 @@
                     android:layout_height="wrap_content"
                     android:textColor="#cccccc"
                     android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="85dp"
+                    android:text="4.9"
+                    android:textColor="#ababab"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/star"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="105dp" />
+
+                <TextView
+                    android:id="@+id/s2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="245dp"
+                    android:text="4.6"
+                    android:textColor="#ababab"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="265dp" />
 
             </RelativeLayout>
 
@@ -94,14 +123,14 @@
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="150dp"
+                    android:layout_height="100dp" />
 
                 <ImageView
                     android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="155dp" />
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="155dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -144,14 +173,43 @@
                     android:layout_height="wrap_content"
                     android:textColor="#cccccc"
                     android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/s3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="85dp"
+                    android:text="4.4"
+                    android:textColor="#ababab"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="105dp" />
+
+                <TextView
+                    android:id="@+id/s4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="245dp"
+                    android:text="3.8"
+                    android:textColor="#ababab"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="265dp" />
 
             </RelativeLayout>
 
             <ImageView
                 android:layout_marginTop="10dp"
                 android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
                 android:layout_marginLeft="7dp" />
 
             <TextView
@@ -161,15 +219,32 @@
                 android:layout_margin="7dp"
                 android:textColor="#1d1d1d"
                 android:textSize="16dp" />
-            <TextView
-                android:layout_marginLeft="7dp"
-                android:id="@+id/p5"
-                android:text="อ่านเพิ่มเติม >>"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#cccccc"
-                android:textSize="16dp" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginLeft="7dp"
+                    android:id="@+id/p5"
+                    android:text="อ่านเพิ่มเติม >>"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#cccccc"
+                    android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/s5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="85dp"
+                    android:text="3.2"
+                    android:textColor="#ababab"
+                    android:textSize="16dp" />
+                <ImageView
+                    android:id="@+id/star5"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginLeft="105dp" />
 
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"

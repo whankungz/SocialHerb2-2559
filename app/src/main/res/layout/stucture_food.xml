@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -12,7 +11,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/custom_toolbar_login" />
+            layout="@layout/custom_toolbar" />
 
         <TextView
             android:id="@+id/textView"
@@ -20,8 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Infographic"
-            android:textColor="#ffffff"
+            android:text="อาหารเพื่อสุขภาพ"
+            android:textColor="#228B22"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -56,8 +55,6 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="155dp" />
             </RelativeLayout>
-
-
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,6 +66,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#1d1d1d"
                     android:textSize="16dp" />
+
 
                 <TextView
                     android:id="@+id/im2"
@@ -91,20 +89,6 @@
                     android:textColor="#cccccc"
                     android:textSize="16dp" />
                 <TextView
-                    android:id="@+id/st"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:text="4.7"
-                    android:textColor="#ababab"
-                    android:textSize="16dp" />
-                <ImageView
-                    android:id="@+id/sta"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="103dp" />
-
-                <TextView
                     android:paddingLeft="160dp"
                     android:id="@+id/p2"
                     android:text="อ่านเพิ่มเติม >>"
@@ -112,19 +96,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="#cccccc"
                     android:textSize="16dp" />
-                <TextView
-                    android:id="@+id/st4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="245dp"
-                    android:text="4.5"
-                    android:textColor="#ababab"
-                    android:textSize="16dp" />
-                <ImageView
-                    android:id="@+id/sta4"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="263dp" />
 
             </RelativeLayout>
 
@@ -186,33 +157,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="#cccccc"
                     android:textSize="16dp" />
-                <TextView
-                    android:id="@+id/st2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:text="4.1"
-                    android:textColor="#ababab"
-                    android:textSize="16dp" />
-                <ImageView
-                    android:id="@+id/sta2"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="103dp" />
-
-                <TextView
-                    android:id="@+id/st5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="245dp"
-                    android:text="3.8"
-                    android:textColor="#ababab"
-                    android:textSize="16dp" />
-                <ImageView
-                    android:id="@+id/sta5"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="263dp" />
 
             </RelativeLayout>
 
@@ -256,56 +200,27 @@
                     android:textSize="16dp" />
 
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginLeft="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/p5"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-                <TextView
-                    android:paddingLeft="160dp"
-                    android:id="@+id/p6"
-                    android:text="อ่านเพิ่มเติม >>"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#cccccc"
-                    android:textSize="16dp" />
-                <TextView
-                    android:id="@+id/st3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="85dp"
-                    android:text="3.3"
-                    android:textColor="#ababab"
-                    android:textSize="16dp" />
-                <ImageView
-                    android:id="@+id/sta3"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="103dp" />
+            <!--<RelativeLayout-->
+                <!--android:layout_marginLeft="7dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/p5"-->
+                    <!--android:text="อ่านเพิ่มเติม >>"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="#cccccc"-->
+                    <!--android:textSize="16dp" />-->
+                <!--<TextView-->
+                    <!--android:paddingLeft="160dp"-->
+                    <!--android:id="@+id/p6"-->
+                    <!--android:text="อ่านเพิ่มเติม >>"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="#cccccc"-->
+                    <!--android:textSize="16dp" />-->
 
-                <TextView
-                    android:id="@+id/st6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="245dp"
-                    android:text="2.9"
-                    android:textColor="#ababab"
-                    android:textSize="16dp" />
-                <ImageView
-                    android:id="@+id/sta6"
-                    android:layout_width="13dp"
-                    android:layout_height="13dp"
-                    android:layout_marginLeft="263dp" />
-
-
-
-            </RelativeLayout>
+            <!--</RelativeLayout>-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

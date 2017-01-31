@@ -4,8 +4,7 @@
     <tab
         icon="@drawable/ic_herb2"
         id="@+id/tab_herb"
-        title="สมุนไพร"
-        />
+        title="สมุนไพร"/>
 
     <tab
         icon="@drawable/ic_disease"

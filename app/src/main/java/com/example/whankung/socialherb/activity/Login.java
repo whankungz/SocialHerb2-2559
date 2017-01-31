@@ -145,45 +145,47 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-                // Get username, password from EditText
-                String username = user.getText().toString();
-                String Password = password.getText().toString();
-
-                // Check if username, password is filled
-                if (username.trim().length() > 0 && Password.trim().length() > 0) {
-                    // For testing puspose username, password is checked with sample data
-                    // username = test
-                    // password = test
-                    if (username.equals("test") && Password.equals("test")) {
-
-
-
-
-                      // Creating user login session
-                        // For testing i am stroing name, email as follow
-                        // Use user real data
-
-                        session.createLoginSession("Android Hive","sfd");
-
-
-                        // Staring MainActivity
-
-                        Intent i = new Intent(getApplicationContext(), Menu.class);
+                Intent i = new Intent(getApplicationContext(), Menu.class);
                         startActivity(i);
-
-
-
-                    } else {
-                        // username / password doesn't match
-                        alert.showAlertDialog(Login.this, "Login failed..", "Username/Password is incorrect", false);
-                    }
-                } else {
-                    // user didn't entered username or password
-                    // Show alert asking him to enter the details
-                    alert.showAlertDialog(Login.this, "Login failed..", "Please enter username and password", false);
-                }
-
             }
+//                // Get username, password from EditText
+//                String username = user.getText().toString();
+//                String Password = password.getText().toString();
+//
+//                // Check if username, password is filled
+//                if (username.trim().length() > 0 && Password.trim().length() > 0) {
+//                    // For testing puspose username, password is checked with sample data
+//                    // username = test
+//                    // password = test
+//                    if (username.equals("whan") && Password.equals("1234")) {
+//
+//
+//
+//                      // Creating user login session
+//                        // For testing i am stroing name, email as follow
+//                        // Use user real data
+//
+//                        session.createLoginSession("Android Hive","sfd");
+//
+//
+//                        // Staring MainActivity
+//
+//                        Intent i = new Intent(getApplicationContext(), Menu.class);
+//                        startActivity(i);
+//
+//
+//
+//                    } else {
+//                        // username / password doesn't match
+//                        alert.showAlertDialog(Login.this, "Login failed..", "Username/Password is incorrect", false);
+//                    }
+//                } else {
+//                    // user didn't entered username or password
+//                    // Show alert asking him to enter the details
+//                    alert.showAlertDialog(Login.this, "Login failed..", "Please enter username and password", false);
+//                }
+//
+//            }
         });
 
         final android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
