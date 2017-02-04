@@ -13,6 +13,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.*;
+import android.widget.RatingBar;
 
 import com.example.whankung.socialherb.R;
 

@@ -31,6 +31,7 @@ import com.example.whankung.socialherb.activity.Menu;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.View.GONE;
 import static java.lang.String.valueOf;
 
 /**
@@ -115,6 +116,7 @@ public class MainHerb extends android.support.v4.app.Fragment {
 
                 search.setImeOptions(EditorInfo.IME_ACTION_DONE);
                 String strMsg = "ทับทิม";
+                String strMsg2 = "มะนาว";
                 if (s.toString().equals(strMsg)) {
                     search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                         @Override
@@ -127,10 +129,30 @@ public class MainHerb extends android.support.v4.app.Fragment {
                                 t.replace(R.id.container, new SearchHerb());
                                 t.commit();
 
+
                             }
                             return false;
                         }
                     });
+                } else if(s.toString().equals(strMsg2)){
+                    search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                        @Override
+                        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                            if (actionId == EditorInfo.IME_ACTION_DONE) {
+
+                                FragmentManager m = getFragmentManager();
+                                FragmentTransaction t = m.beginTransaction();
+                                t.replace(R.id.container, new SearchHerb());
+                                t.commit();
+
+
+
+                            }
+                            return false;
+                        }
+                    });
+
                 }
             }
         });

@@ -26,11 +26,20 @@ public class HowtoHerbFragment extends android.support.v4.app.Fragment {
         rootView = inflater.inflate(R.layout.howto_herb, container, false);
         setView();
         setData();
-        setRating();
+//        setRating();
         return rootView;
     }
 
     private void setRating() {
+        rat.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+
+                String rateValue = String.valueOf(rat.getRating());
+                System.out.println("Rate for Module is"+rateValue);
+            }
+        });
     }
 
     private void setView() {

@@ -8,11 +8,14 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 
 import com.example.whankung.socialherb.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.view.View.GONE;
 
 /**
  * Created by Whankung on 22/1/2560.
@@ -49,6 +52,8 @@ public class SearchHerb extends android.support.v4.app.Fragment{
             @Override
             public void onPageSelected(int position) {
 
+//                RatingBar rat=(RatingBar) rootView.findViewById(R.id.rat);
+//                rat.setVisibility(GONE);
 
 
 

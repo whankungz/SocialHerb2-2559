@@ -45,9 +45,9 @@ public class SearchDisease extends Fragment {
     }
 
     private void setView() {
-        date = (TextView) rootView.findViewById(R.id.date);
-        nm = (TextView) rootView.findViewById(R.id.nameMe);
-        un = (TextView) rootView.findViewById(R.id.Uname);
+//        date = (TextView) rootView.findViewById(R.id.date);
+//        nm = (TextView) rootView.findViewById(R.id.nameMe);
+//        un = (TextView) rootView.findViewById(R.id.Uname);
         t = (TextView) rootView.findViewById(R.id.nameD);
         t2 = (TextView) rootView.findViewById(R.id.nameDdata);
         t3 = (TextView) rootView.findViewById(R.id.nameOther);
@@ -69,9 +69,9 @@ public class SearchDisease extends Fragment {
         t7.setTypeface(font);
         t8.setTypeface(font);
         t9.setTypeface(font);
-        nm.setTypeface(font);
-        un.setTypeface(font);
-        date.setTypeface(font);
+//        nm.setTypeface(font);
+//        un.setTypeface(font);
+//        date.setTypeface(font);
     }
 
     private void setSearch() {

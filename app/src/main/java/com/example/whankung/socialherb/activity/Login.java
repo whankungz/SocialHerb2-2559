@@ -1,15 +1,20 @@
 package com.example.whankung.socialherb.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +29,12 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import static android.R.attr.name;
 
 /**
@@ -33,17 +44,20 @@ import static android.R.attr.name;
 public class Login extends AppCompatActivity {
     private Drawer result = null;
     private Typeface font;
-    // Email, password edittext
+
     EditText user, password;
 
-    // login
-    TextView login;
+
+    TextView login, skip, head, regis;
 
     // Alert Dialog Manager
     AlertDialogManager alert = new AlertDialogManager();
 
     // Session Manager Class
     SessionManagement session;
+    ProgressBar progressBar;
+    Connection con;
+   private String un, pass, db, ip;
 
 
     @Override
@@ -51,7 +65,18 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         setView();
-        setLogin();
+        //  setLogin();
+
+        // Declaring Server ip, username, database name and password
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
+                checkLogin.execute("");
+            }
+        });
     }
 
 
@@ -68,22 +93,26 @@ public class Login extends AppCompatActivity {
 
             }
         });
-
-        TextView skip = (TextView) findViewById(R.id.skip);
-        TextView head = (TextView) findViewById(R.id.textView4);
-        TextView login = (TextView) findViewById(R.id.textView);
-        TextView regis = (TextView) findViewById(R.id.textView2);
-        TextView user = (TextView) findViewById(R.id.user);
-        TextView psword = (TextView) findViewById(R.id.password);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
+        skip = (TextView) findViewById(R.id.skip);
+        head = (TextView) findViewById(R.id.textView4);
+        login = (TextView) findViewById(R.id.textView);
+        regis = (TextView) findViewById(R.id.textView2);
+        user = (EditText) findViewById(R.id.user);
+        password = (EditText) findViewById(R.id.password);
 
 //        เปลี่ยนfont
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
         skip.setTypeface(font);
         head.setTypeface(font);
         user.setTypeface(font);
-        psword.setTypeface(font);
+        password.setTypeface(font);
         login.setTypeface(font);
         regis.setTypeface(font);
+
+
+
 
 //หน้าแรก
         skip.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +127,7 @@ public class Login extends AppCompatActivity {
             }
         });
 //เข้าสู่ระบบ
+
 //        login.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -119,6 +149,86 @@ public class Login extends AppCompatActivity {
 
     }
 
+    public class CheckLogin extends AsyncTask<String, String, String> {
+        String z = "";
+        Boolean isSuccess = false;
+
+        @Override
+        protected void onPreExecute() {
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected void onPostExecute(String r) {
+            progressBar.setVisibility(View.GONE);
+            Toast.makeText(Login.this, r, Toast.LENGTH_SHORT).show();
+            if (isSuccess) {
+                Toast.makeText(Login.this, "Login Successfull", Toast.LENGTH_LONG).show();
+                //finish();
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String username = user.getText().toString();
+            String passwordd = password.getText().toString();
+            if (username.trim().equals("") || passwordd.trim().equals(""))
+                z = "Please enter Username and Password";
+            else {
+                try {
+                    con = connectionclass();        // Connect to database
+                    if (con == null) {
+                        z = "Check Your Internet Access!";
+                    } else {
+                        String query = "select * from Usertbl where UserId= '" + username + "' and pass_word = '" + passwordd + "'  ";
+                        Statement stmt = con.createStatement();
+                        ResultSet rs = stmt.executeQuery(query);
+                        if (rs.next()) {
+                            z = "Login successful";
+                            isSuccess = true;
+                            con.close();
+                        } else {
+                            z = "Invalid Credentials!";
+                            isSuccess = false;
+                        }
+                    }
+                } catch (Exception ex) {
+                    isSuccess = false;
+                    z = ex.getMessage();
+                }
+            }
+            return z;
+        }
+    }
+
+
+    @SuppressLint("NewApi")
+    public Connection connectionclass() {
+        ip = "172.19.53.48";
+        db = "Andro";
+        un = "Whan/Whankung";
+        pass = "";
+
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        Connection connection = null;
+        String ConnectionURL = null;
+        try {
+            Class.forName("net.sourceforge.jtds.jdbc.Driver");
+            ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ";"
+                    + "databaseName=" + db + ";user=" + un + ";password="
+                    + pass + ";";
+            connection = DriverManager.getConnection(ConnectionURL);
+        } catch (SQLException se) {
+            Log.e("error here 1 : ", se.getMessage());
+        } catch (ClassNotFoundException e) {
+            Log.e("error here 2 : ", e.getMessage());
+        } catch (Exception e) {
+            Log.e("error here 3 : ", e.getMessage());
+        }
+        return connection;
+    }
 
 
     private void setLogin() {
@@ -135,7 +245,6 @@ public class Login extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 
 
-
         // Login
         login = (TextView) findViewById(R.id.textView);
 
@@ -146,7 +255,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 Intent i = new Intent(getApplicationContext(), Menu.class);
-                        startActivity(i);
+                startActivity(i);
             }
 //                // Get username, password from EditText
 //                String username = user.getText().toString();

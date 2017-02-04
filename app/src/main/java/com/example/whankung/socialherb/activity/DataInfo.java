@@ -33,9 +33,9 @@ public class DataInfo extends AppCompatActivity {
     }
 
     private void setView() {
-        date2 = (TextView) findViewById(R.id.date2);
-        nm2 = (TextView) findViewById(R.id.nameMe2);
-        un2 = (TextView) findViewById(R.id.Uname2);
+//        date2 = (TextView) findViewById(R.id.date2);
+//        nm2 = (TextView) findViewById(R.id.nameMe2);
+//        un2 = (TextView) findViewById(R.id.Uname2);
         tvI = (TextView) findViewById(R.id.textI);
         nameI = (TextView) findViewById(R.id.nameI);
         namefI = (TextView)findViewById(R.id.namefI);
@@ -49,9 +49,9 @@ public class DataInfo extends AppCompatActivity {
         namefI.setTypeface(font);
         frI.setTypeface(font);
         submitI.setTypeface(font);
-        nm2.setTypeface(font);
-        un2.setTypeface(font);
-        date2.setTypeface(font);
+//        nm2.setTypeface(font);
+//        un2.setTypeface(font);
+//        date2.setTypeface(font);
 
         img= (ImageView) findViewById(R.id.action_login);
         img.setVisibility(View.VISIBLE);

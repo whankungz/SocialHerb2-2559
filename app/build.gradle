@@ -9,6 +9,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -26,6 +27,7 @@ dependencies {
     })
 
 
+    compile project(':jtds-1.2.7')
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile 'com.roughike:bottom-bar:2.0.2'

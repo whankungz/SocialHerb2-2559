@@ -101,6 +101,18 @@ public class MainArticle extends android.support.v4.app.Fragment {
             }
         });
 
+
+        i2.setClickable(true);
+        i2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager m = getFragmentManager();
+                FragmentTransaction t = m.beginTransaction();
+                t.replace(R.id.container, new DataArticle2());
+                t.commit();
+            }
+        });
+
     }
 
 

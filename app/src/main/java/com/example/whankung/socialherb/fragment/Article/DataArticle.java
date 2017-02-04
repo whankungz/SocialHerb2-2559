@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
@@ -23,22 +24,25 @@ public class DataArticle extends android.support.v4.app.Fragment {
     private ImageView i;
     private TextView t, t2, t3, t4, t5, t6,nm, un, date;
     private String link = "http://www.thaihealth.or.th/Content/35077-%E2%80%98%E0%B9%82%E0%B8%A3%E0%B8%84%E0%B8%AD%E0%B9%89%E0%B8%A7%E0%B8%99%E2%80%99%20%E0%B8%A1%E0%B8%AB%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B8%A1%E0%B8%B7%E0%B8%94%E0%B8%A1%E0%B8%99%E0%B8%B8%E0%B8%A9%E0%B8%A2%E0%B9%8C%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87.html";
-
+    private RatingBar rat;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceStat) {
         rootView = inflater.inflate(R.layout.data_article, container, false);
         setView();
         setData();
+        setRating();
 
         return rootView;
     }
+    private void setRating() {
 
+    }
 
     private void setView() {
-        date = (TextView) rootView.findViewById(R.id.date);
-        nm = (TextView) rootView.findViewById(R.id.nameMe);
-        un = (TextView) rootView.findViewById(R.id.Uname);
+//        date = (TextView) rootView.findViewById(R.id.date);
+//        nm = (TextView) rootView.findViewById(R.id.nameMe);
+//        un = (TextView) rootView.findViewById(R.id.Uname);
         t = (TextView) rootView.findViewById(R.id.nameA);
         t2 = (TextView) rootView.findViewById(R.id.nameDdataA);
         t3 = (TextView) rootView.findViewById(R.id.namef);
@@ -55,9 +59,9 @@ public class DataArticle extends android.support.v4.app.Fragment {
         t4.setTypeface(font);
         t5.setTypeface(font);
         t6.setTypeface(font);
-        nm.setTypeface(font);
-        un.setTypeface(font);
-        date.setTypeface(font);
+//        nm.setTypeface(font);
+//        un.setTypeface(font);
+//        date.setTypeface(font);
 
     }
 
