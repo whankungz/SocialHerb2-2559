@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
     defaultConfig {
-        applicationId "com.promptnow.econprice"
+    //    applicationId "com.promptnow.econprice"
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
@@ -44,9 +44,16 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     compile files('src/main/assets/jtds-1.2.7-sources.jar')
 
+    compile 'com.google.android.gms:play-services-appinvite:9.0.0'
+    compile 'com.google.firebase:firebase-invites:10.0.1'
+
+
 }
+
 repositories {
     maven { url 'http://yanzm.github.io/MaterialTabHost/repository' }
 
 }
+//apply plugin: 'com.google.gms.google-services'
+
 

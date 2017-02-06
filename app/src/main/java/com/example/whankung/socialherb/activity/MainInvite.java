@@ -2,8 +2,10 @@ package com.example.whankung.socialherb.activity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -11,6 +13,12 @@ import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
 import com.example.whankung.socialherb.view.View_popup;
+import com.google.android.gms.appinvite.AppInvite;
+import com.google.android.gms.appinvite.AppInviteInvitation;
+import com.google.android.gms.appinvite.AppInviteInvitationResult;
+import com.google.android.gms.appinvite.AppInviteReferral;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
 
 /**
  * Created by Whankung on 31/1/2560.
@@ -22,8 +30,11 @@ public class MainInvite extends AppCompatActivity implements View_popup.onSubmit
     ImageView img, i4, i5, i6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.stucture_invite);
+    //    setContentView(R.layout.stucture_invite);
+
+
         ImageView img= (ImageView) findViewById(R.id.action_login);
         img.setVisibility(View.VISIBLE);
         img.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +51,7 @@ public class MainInvite extends AppCompatActivity implements View_popup.onSubmit
 
 
     }
+
 
 
 
@@ -92,6 +104,41 @@ public class MainInvite extends AppCompatActivity implements View_popup.onSubmit
     }
     private void setinvite() {
 
+//        Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
+//                .setMessage(getString(R.string.invitation_message))
+//                .setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
+//                .setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
+//                .setCallToActionText(getString(R.string.invitation_cta))
+//                .build();
+//        startActivityForResult(intent, REQUEST_INVITE);
+        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(AppInvite.API)
+                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this)
+                .build();
+
+        boolean autoLaunchDeepLink = true;
+        AppInvite.AppInviteApi.getInvitation(mGoogleApiClient, this, autoLaunchDeepLink)
+                .setResultCallback(
+                        new ResultCallback<AppInviteInvitationResult>() {
+                            public static final String TAG = "true";
+
+                            @Override
+                            public void onResult(AppInviteInvitationResult result) {
+
+                                Log.d(TAG, "getInvitation:onResult:" + result.getStatus());
+                                if (result.getStatus().isSuccess()) {
+                                    // Extract information from the intent
+                                    Intent intent = result.getInvitationIntent();
+                                    String deepLink = AppInviteReferral.getDeepLink(intent);
+                                    String invitationId = AppInviteReferral.getInvitationId(intent);
+
+                                    // Because autoLaunchDeepLink = true we don't have to do anything
+                                    // here, but we could set that to false and manually choose
+                                    // an Activity to launch to handle the deep link here.
+                                    // ...
+                                }
+                            }
+                        });
     }
 
     @Override

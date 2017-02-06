@@ -32,7 +32,7 @@ public class ShareF extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stucture_share);
 //facebook
-        String urlToShare = "http://i.imgur.com/tr44jlm.png";
+        String urlToShare = "https://play.google.com/store/apps";
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
 // intent.putExtra(Intent.EXTRA_SUBJECT, "Foo bar"); // NB: has no effect!
