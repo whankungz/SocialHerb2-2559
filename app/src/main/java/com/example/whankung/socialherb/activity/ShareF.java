@@ -3,7 +3,9 @@ package com.example.whankung.socialherb.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.whankung.socialherb.R;
+
+import java.util.List;
 
 /**
  * Created by Whankung on 31/1/2560.
@@ -27,6 +31,33 @@ public class ShareF extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stucture_share);
+//facebook
+        String urlToShare = "http://i.imgur.com/tr44jlm.png";
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+// intent.putExtra(Intent.EXTRA_SUBJECT, "Foo bar"); // NB: has no effect!
+        intent.putExtra(Intent.EXTRA_TEXT, urlToShare);
+
+// See if official Facebook app is found
+        boolean facebookAppFound = false;
+        List<ResolveInfo> matches = getPackageManager().queryIntentActivities(intent, 0);
+        for (ResolveInfo info : matches) {
+            if (info.activityInfo.packageName.toLowerCase().startsWith("com.facebook.katana")) {
+                intent.setPackage(info.activityInfo.packageName);
+                facebookAppFound = true;
+                break;
+            }
+        }
+
+// As fallback, launch sharer.php in a browser
+        if (!facebookAppFound) {
+            String sharerUrl = "https://www.facebook.com/sharer/sharer.php?u=" + urlToShare;
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(sharerUrl));
+        }
+
+        startActivity(intent);
+
+
         imgF = (ImageView) findViewById(R.id.action_face);
         imgF.setVisibility(View.VISIBLE);
         imgF.setOnClickListener(new View.OnClickListener() {
@@ -44,20 +75,20 @@ public class ShareF extends AppCompatActivity {
         });
         setView();
 
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+//        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
     }
 
 
     private void setView() {
         tvI = (TextView) findViewById(R.id.textI);
-        shareW = (TextView) findViewById(R.id.shareW);
-        ts = (TextView) findViewById(R.id.tshare);
-        Sapp= (TextView) findViewById(R.id.soapp);
+     //   shareW = (TextView) findViewById(R.id.shareW);
+      //  ts = (TextView) findViewById(R.id.tshare);
+     //   Sapp= (TextView) findViewById(R.id.soapp);
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
         tvI.setTypeface(font);
-        shareW.setTypeface(font);
-        ts.setTypeface(font);
-        Sapp.setTypeface(font);
+      //  shareW.setTypeface(font);
+       // ts.setTypeface(font);
+      //  Sapp.setTypeface(font);
     }
 }

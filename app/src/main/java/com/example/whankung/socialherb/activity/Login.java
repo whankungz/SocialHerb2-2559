@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
     private Drawer result = null;
     private Typeface font;
 
-    EditText user, password;
+    EditText edtuserid,edtpass;
 
 
     TextView login, skip, head, regis;
@@ -58,12 +58,13 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
     Connection con;
    private String un, pass, db, ip;
-
+    ConnectionClass connectionClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        connectionClass = new ConnectionClass();
         setView();
         //  setLogin();
 
@@ -77,6 +78,8 @@ public class Login extends AppCompatActivity {
                 checkLogin.execute("");
             }
         });
+
+
     }
 
 
@@ -99,15 +102,15 @@ public class Login extends AppCompatActivity {
         head = (TextView) findViewById(R.id.textView4);
         login = (TextView) findViewById(R.id.textView);
         regis = (TextView) findViewById(R.id.textView2);
-        user = (EditText) findViewById(R.id.user);
-        password = (EditText) findViewById(R.id.password);
+       edtuserid = (EditText) findViewById(R.id.user);
+        edtpass = (EditText) findViewById(R.id.password);
 
 //        เปลี่ยนfont
         font = Typeface.createFromAsset(getAssets(), "tmedium.ttf");
         skip.setTypeface(font);
         head.setTypeface(font);
-        user.setTypeface(font);
-        password.setTypeface(font);
+        edtuserid.setTypeface(font);
+       edtpass.setTypeface(font);
         login.setTypeface(font);
         regis.setTypeface(font);
 
@@ -147,6 +150,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
     }
 
     public class CheckLogin extends AsyncTask<String, String, String> {
@@ -170,17 +174,18 @@ public class Login extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            String username = user.getText().toString();
-            String passwordd = password.getText().toString();
-            if (username.trim().equals("") || passwordd.trim().equals(""))
+            String userid = edtuserid.getText().toString();
+            String password = edtpass.getText().toString();
+
+            if (userid.trim().equals("") || password.trim().equals(""))
                 z = "Please enter Username and Password";
             else {
                 try {
-                    con = connectionclass();        // Connect to database
+                    Connection con = connectionClass.connection();       // Connect to database
                     if (con == null) {
                         z = "Check Your Internet Access!";
                     } else {
-                        String query = "select * from Usertbl where UserId= '" + username + "' and pass_word = '" + passwordd + "'  ";
+                        String query ="select * from UserId where Usertbl='" + userid + "' and Password='" + password + "'";
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if (rs.next()) {
@@ -202,33 +207,7 @@ public class Login extends AppCompatActivity {
     }
 
 
-    @SuppressLint("NewApi")
-    public Connection connectionclass() {
-        ip = "172.19.53.48";
-        db = "Andro";
-        un = "Whan/Whankung";
-        pass = "";
 
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ";"
-                    + "databaseName=" + db + ";user=" + un + ";password="
-                    + pass + ";";
-            connection = DriverManager.getConnection(ConnectionURL);
-        } catch (SQLException se) {
-            Log.e("error here 1 : ", se.getMessage());
-        } catch (ClassNotFoundException e) {
-            Log.e("error here 2 : ", e.getMessage());
-        } catch (Exception e) {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }
 
 
     private void setLogin() {
@@ -239,8 +218,7 @@ public class Login extends AppCompatActivity {
         session = new SessionManagement(getApplicationContext());
 
         // Email, Password input text
-        user = (EditText) findViewById(R.id.user);
-        password = (EditText) findViewById(R.id.password);
+
 
         Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 
