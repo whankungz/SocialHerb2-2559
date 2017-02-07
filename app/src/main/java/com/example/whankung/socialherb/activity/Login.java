@@ -1,11 +1,13 @@
 package com.example.whankung.socialherb.activity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +23,16 @@ import android.widget.Toast;
 import com.example.whankung.socialherb.R;
 import com.example.whankung.socialherb.fragment.Disease.SearchDisease;
 import com.example.whankung.socialherb.fragment.Herb.SampleFragmentPagerAdapterHerb;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.OptionalPendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -41,11 +53,11 @@ import static android.R.attr.name;
  * Created by Whankung on 17/1/2560.
  */
 
-public class Login extends AppCompatActivity {
+public  class Login extends AppCompatActivity  {
     private Drawer result = null;
     private Typeface font;
 
-    EditText edtuserid,edtpass;
+    EditText edtuserid, edtpass;
 
 
     TextView login, skip, head, regis;
@@ -57,8 +69,12 @@ public class Login extends AppCompatActivity {
     SessionManagement session;
     ProgressBar progressBar;
     Connection con;
-   private String un, pass, db, ip;
+    private String un, pass, db, ip;
     ConnectionClass connectionClass;
+
+    private static final String TAG = "SignInActivity";
+    private static final int RC_SIGN_IN = 9001;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,22 +82,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
         connectionClass = new ConnectionClass();
         setView();
+
         //  setLogin();
-
-        // Declaring Server ip, username, database name and password
-
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
-                checkLogin.execute("");
-            }
-        });
 
 
     }
-
 
     private void setView() {
 
@@ -102,7 +107,7 @@ public class Login extends AppCompatActivity {
         head = (TextView) findViewById(R.id.textView4);
         login = (TextView) findViewById(R.id.textView);
         regis = (TextView) findViewById(R.id.textView2);
-       edtuserid = (EditText) findViewById(R.id.user);
+        edtuserid = (EditText) findViewById(R.id.user);
         edtpass = (EditText) findViewById(R.id.password);
 
 //        เปลี่ยนfont
@@ -110,18 +115,24 @@ public class Login extends AppCompatActivity {
         skip.setTypeface(font);
         head.setTypeface(font);
         edtuserid.setTypeface(font);
-       edtpass.setTypeface(font);
+        edtpass.setTypeface(font);
         login.setTypeface(font);
         regis.setTypeface(font);
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
+                checkLogin.execute("");
+            }
+        });
 
 
 
 //หน้าแรก
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Menu.class);
                 startActivity(intent);
 //                getActivity().finish();
@@ -152,6 +163,7 @@ public class Login extends AppCompatActivity {
 
 
     }
+
 
     public class CheckLogin extends AsyncTask<String, String, String> {
         String z = "";
@@ -185,7 +197,7 @@ public class Login extends AppCompatActivity {
                     if (con == null) {
                         z = "Check Your Internet Access!";
                     } else {
-                        String query ="select * from UserId where Usertbl='" + userid + "' and Password='" + password + "'";
+                        String query = "select * from Pharmacist where username='" + userid + "' and password='" + password + "'";
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if (rs.next()) {
@@ -205,9 +217,6 @@ public class Login extends AppCompatActivity {
             return z;
         }
     }
-
-
-
 
 
     private void setLogin() {

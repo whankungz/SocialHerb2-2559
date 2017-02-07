@@ -24,15 +24,17 @@ public class ConnectionClass {
 
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);        Connection connection = null;
+        StrictMode.setThreadPolicy(policy);
+        Connection connection = null;
         String ConnectionURL = null;
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
 //        ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ";"
 //                    + "databaseName=" + db + ";user=" + un + ";password="
 //                    + pass + ";";
-
-            ConnectionURL = "jdbc:jtds:sqlserver://172.19.131.81/Andro;user=Whan\\Whankung;password=";
+            //jdbc:sqlserver://localhost\\SQL2008R2;databaseName=SocialHerb;user=sa;password=0000
+            // ConnectionURL = "jdbc:jtds:sqlserver://172.19.53.151:1433/Andro;user=Whan\\Whankung;password=";
+            ConnectionURL = "jdbc:jtds:sqlserver://172.19.53.151/SocialHerb;user=sa;password=1234";
             connection = DriverManager.getConnection(ConnectionURL);
         } catch (SQLException se) {
             Log.e("error here 1 : ", se.getMessage());

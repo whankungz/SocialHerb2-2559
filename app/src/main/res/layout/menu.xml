@@ -32,7 +32,35 @@
         app:bb_activeTabColor="#249e24"
         app:bb_inActiveTabColor="#8b8b8b"
         app:bb_tabXmlResource="@xml/bottombar_tabs_three" />
+<!--<RelativeLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
 
+    <!--<com.google.android.gms.common.SignInButton-->
+        <!--android:id="@+id/sign_in_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="170dp"/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/status"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+
+        <!--android:paddingLeft="30dp"-->
+        <!--android:paddingRight="30dp"-->
+        <!--android:textColor="#b1b1b1"-->
+        <!--android:textSize="23dp" />-->
+    <!--<TextView-->
+        <!--android:id="@+id/sign_out_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:paddingLeft="30dp"-->
+        <!--android:paddingRight="30dp"-->
+        <!--android:textColor="#b1b1b1"-->
+        <!--android:textSize="23dp" />-->
+<!--</RelativeLayout>-->
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"

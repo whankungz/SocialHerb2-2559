@@ -1,7 +1,9 @@
 package com.example.whankung.socialherb.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,10 +22,11 @@ import com.google.android.gms.appinvite.AppInviteReferral;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 
+
 /**
  * Created by Whankung on 31/1/2560.
  */
-public class MainInvite extends AppCompatActivity implements View_popup.onSubmitAlertDialogListener {
+public class MainInvite extends AppCompatActivity  {
 
     private Typeface font;
     TextView tvI,nameIn, i, i2, i3;
@@ -32,7 +35,7 @@ public class MainInvite extends AppCompatActivity implements View_popup.onSubmit
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-    //    setContentView(R.layout.stucture_invite);
+       setContentView(R.layout.stucture_invite);
 
 
         ImageView img= (ImageView) findViewById(R.id.action_login);
@@ -111,38 +114,42 @@ public class MainInvite extends AppCompatActivity implements View_popup.onSubmit
 //                .setCallToActionText(getString(R.string.invitation_cta))
 //                .build();
 //        startActivityForResult(intent, REQUEST_INVITE);
-        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(AppInvite.API)
-                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this)
-                .build();
+//        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .addApi(AppInvite.API)
+//                .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this)
+//                .build();
+//
+//        boolean autoLaunchDeepLink = true;
+//        AppInvite.AppInviteApi.getInvitation(mGoogleApiClient, this, autoLaunchDeepLink)
+//                .setResultCallback(
+//                        new ResultCallback<AppInviteInvitationResult>() {
+//                            public static final String TAG = "true";
+//
+//                            @Override
+//                            public void onResult(AppInviteInvitationResult result) {
+//
+//                                Log.d(TAG, "getInvitation:onResult:" + result.getStatus());
+//                                if (result.getStatus().isSuccess()) {
+//                                    // Extract information from the intent
+//                                    Intent intent = result.getInvitationIntent();
+//                                    String deepLink = AppInviteReferral.getDeepLink(intent);
+//                                    String invitationId = AppInviteReferral.getInvitationId(intent);
+//
+//
+//                                }
+//                            }
+//                        });
 
-        boolean autoLaunchDeepLink = true;
-        AppInvite.AppInviteApi.getInvitation(mGoogleApiClient, this, autoLaunchDeepLink)
-                .setResultCallback(
-                        new ResultCallback<AppInviteInvitationResult>() {
-                            public static final String TAG = "true";
 
-                            @Override
-                            public void onResult(AppInviteInvitationResult result) {
+        Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Try (your game) for Android!");
+        shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "I'm using (your game) for Android and I recommend it. Click here: http://www.yourdomain.com");
 
-                                Log.d(TAG, "getInvitation:onResult:" + result.getStatus());
-                                if (result.getStatus().isSuccess()) {
-                                    // Extract information from the intent
-                                    Intent intent = result.getInvitationIntent();
-                                    String deepLink = AppInviteReferral.getDeepLink(intent);
-                                    String invitationId = AppInviteReferral.getInvitationId(intent);
-
-                                    // Because autoLaunchDeepLink = true we don't have to do anything
-                                    // here, but we could set that to false and manually choose
-                                    // an Activity to launch to handle the deep link here.
-                                    // ...
-                                }
-                            }
-                        });
+        Intent chooserIntent = Intent.createChooser(shareIntent, "Share with");
+        chooserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(chooserIntent);
     }
 
-    @Override
-    public void setOnSubmitAlertDialogListener() {
 
-    }
 }
