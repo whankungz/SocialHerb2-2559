@@ -472,14 +472,15 @@ public class Menu extends AppCompatActivity  {
                                 .withSelectable(false)
                                 .withIconColor(getResources().getColor(R.color.md_grey_100))
                                 .withTextColorRes(R.color.md_grey_100)
-                                .withIdentifier(3),
-                        new PrimaryDrawerItem()
-                                .withIcon(FontAwesome.Icon.faw_sign_out)
-                                .withName("ออกจากระบบ")
-                                .withSelectable(false)
-                                .withIconColor(getResources().getColor(R.color.md_grey_100))
-                                .withTextColorRes(R.color.md_grey_100)
-                                .withIdentifier(4)
+                                .withIdentifier(3)
+//                        ,
+//                        new PrimaryDrawerItem()
+//                                .withIcon(FontAwesome.Icon.faw_sign_out)
+//                                .withName("ออกจากระบบ")
+//                                .withSelectable(false)
+//                                .withIconColor(getResources().getColor(R.color.md_grey_100))
+//                                .withTextColorRes(R.color.md_grey_100)
+//                                .withIdentifier(4)
                 )
                 .withSelectedItem(-1)
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {

@@ -48,6 +48,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import static android.R.attr.drawable;
 import static android.R.attr.name;
 import static android.R.attr.onClick;
 import static com.example.whankung.socialherb.R.id.username;
@@ -139,8 +140,6 @@ public  class Login extends AppCompatActivity  {
                 Intent intent = new Intent(getApplicationContext(), Menu.class);
                 startActivity(intent);
 //                getActivity().finish();
-
-
             }
         });
 //เข้าสู่ระบบ
@@ -163,10 +162,29 @@ public  class Login extends AppCompatActivity  {
 
             }
         });
-
+//        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle(R.string.drawer_item_menu_drawer);
+//        final Drawer drawer = new DrawerBuilder()
+//                .withActivity(this)
+//                .withToolbar(toolbar)
+//                .withActionBarDrawerToggle(true)
+////                .withAccountHeader(accountHeader)
+//                .withCloseOnClick(true)
+//                .withSliderBackgroundColorRes(R.color.md_light_primary_text)
+//
+//    .addDrawerItems(
+//                new PrimaryDrawerItem()
+//                        .withIcon(FontAwesome.Icon.faw_sign_out)
+//                        .withName("ออกจากระบบ")
+//                        .withSelectable(false)
+//                        .withIconColor(getResources().getColor(R.color.md_grey_100))
+//                        .withTextColorRes(R.color.md_grey_100)
+//                        .withIdentifier(4)
+//       ).build();
+//
 
     }
-
 
     public class CheckLogin extends AsyncTask<String, String, String> {
         String z = "";
@@ -216,7 +234,7 @@ public  class Login extends AppCompatActivity  {
 
 
 
-                            con.close();
+                                            con.close();
                         } else {
                             z = "Invalid Credentials!";
                             isSuccess = false;
