@@ -48,6 +48,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static android.R.attr.name;
+import static com.example.whankung.socialherb.R.id.username;
 
 /**
  * Created by Whankung on 17/1/2560.
@@ -197,16 +198,25 @@ public  class Login extends AppCompatActivity  {
                     if (con == null) {
                         z = "Check Your Internet Access!";
                     } else {
-                        String query = "select * from Pharmacist where username='" + userid + "' and password='" + password + "'";
+                        String query = "select * from Pharmacist where username= '" + userid.toString() + "' and password = '"+ password.toString() +"'  ";
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if (rs.next()) {
-                            z = "Login successful";
-                            isSuccess = true;
-                            con.close();
+//                            z = "Login successful";
+//                            isSuccess = true;
+                            login.setOnClickListener(new View.OnClickListener() {
+                                                         @Override
+                                                         public void onClick(View view) {
+                                                             Intent intent = new Intent(getApplicationContext(), Menu.class);
+                                                             startActivity(intent);
+                                                         }
+                                                     });
+                            return String.valueOf(login);
+                         //   con.close();
                         } else {
                             z = "Invalid Credentials!";
                             isSuccess = false;
+
                         }
                     }
                 } catch (Exception ex) {

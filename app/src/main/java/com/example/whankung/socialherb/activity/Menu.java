@@ -1,9 +1,13 @@
 package com.example.whankung.socialherb.activity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
@@ -47,7 +51,9 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Whankung on 16/1/2560.
@@ -531,9 +537,10 @@ public class Menu extends AppCompatActivity  {
                                                                break;
                                                            case 10:
                                                                tv.setText("logout");
-                                                               session = new SessionManagement(getApplicationContext());
-                                                               intent = new Intent(getApplicationContext(), StartApp2.class);
-                                                               startActivity(intent);
+
+//                                                               session = new SessionManagement(getApplicationContext());
+//                                                               intent = new Intent(getApplicationContext(), StartApp2.class);
+//                                                               startActivity(intent);
 
                                                                break;
                                                        }

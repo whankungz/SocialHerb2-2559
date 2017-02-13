@@ -34,7 +34,7 @@ public class ConnectionClass {
 //                    + pass + ";";
             //jdbc:sqlserver://localhost\\SQL2008R2;databaseName=SocialHerb;user=sa;password=0000
             // ConnectionURL = "jdbc:jtds:sqlserver://172.19.53.151:1433/Andro;user=Whan\\Whankung;password=";
-            ConnectionURL = "jdbc:jtds:sqlserver://172.19.53.151/SocialHerb;user=sa;password=1234";
+            ConnectionURL = "jdbc:jtds:sqlserver://192.168.233.51/SocialHerb;user=sa;password=1234";
             connection = DriverManager.getConnection(ConnectionURL);
         } catch (SQLException se) {
             Log.e("error here 1 : ", se.getMessage());
