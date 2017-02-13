@@ -2,6 +2,7 @@ package com.example.whankung.socialherb.activity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
@@ -48,6 +49,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static android.R.attr.name;
+import static android.R.attr.onClick;
 import static com.example.whankung.socialherb.R.id.username;
 
 /**
@@ -189,7 +191,13 @@ public  class Login extends AppCompatActivity  {
         protected String doInBackground(String... params) {
             String userid = edtuserid.getText().toString();
             String password = edtpass.getText().toString();
-
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), Menu.class);
+                    startActivity(intent);
+                }
+            });
             if (userid.trim().equals("") || password.trim().equals(""))
                 z = "Please enter Username and Password";
             else {
@@ -198,21 +206,17 @@ public  class Login extends AppCompatActivity  {
                     if (con == null) {
                         z = "Check Your Internet Access!";
                     } else {
+
                         String query = "select * from Pharmacist where username= '" + userid.toString() + "' and password = '"+ password.toString() +"'  ";
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if (rs.next()) {
-//                            z = "Login successful";
-//                            isSuccess = true;
-                            login.setOnClickListener(new View.OnClickListener() {
-                                                         @Override
-                                                         public void onClick(View view) {
-                                                             Intent intent = new Intent(getApplicationContext(), Menu.class);
-                                                             startActivity(intent);
-                                                         }
-                                                     });
-                            return String.valueOf(login);
-                         //   con.close();
+                            z = "Login Successful";
+                           isSuccess = true;
+
+
+
+                            con.close();
                         } else {
                             z = "Invalid Credentials!";
                             isSuccess = false;
@@ -225,6 +229,7 @@ public  class Login extends AppCompatActivity  {
                 }
             }
             return z;
+
         }
     }
 
